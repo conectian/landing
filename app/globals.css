@@ -1,26 +1,220 @@
 @import "tailwindcss";
 
+/* Lefebvre-Inspired Design System for Conectian */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary Navy Palette */
+  --navy-900: #002E5D;
+  --navy-800: #003366;
+  --navy-700: #003D7A;
+  --navy-600: #004A94;
+  --navy-500: #0057A8;
+  
+  /* Accent Red (CTA) */
+  --accent-red: #E31837;
+  --accent-red-hover: #C41530;
+  
+  /* Neutral Grays */
+  --gray-50: #F8F9FA;
+  --gray-100: #F5F5F5;
+  --gray-200: #E0E0E0;
+  --gray-300: #CCCCCC;
+  --gray-400: #999999;
+  --gray-500: #777777;
+  --gray-600: #555555;
+  --gray-700: #333333;
+  --gray-800: #222222;
+  
+  /* Semantic Colors */
+  --background: #FFFFFF;
+  --foreground: var(--gray-700);
+  --heading-color: var(--navy-900);
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 2px 8px rgba(0, 46, 93, 0.08);
+  
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-navy-900: var(--navy-900);
+  --color-navy-700: var(--navy-700);
+  --color-navy-500: var(--navy-500);
+  --color-accent-red: var(--accent-red);
+  --color-gray-50: var(--gray-50);
+  --color-gray-100: var(--gray-100);
+  --color-gray-200: var(--gray-200);
+  --font-sans: "Inter", system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background-color: var(--accent-red);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-red-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: var(--navy-900);
+  color: white;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: var(--navy-700);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--navy-900);
+  border: 1px solid var(--navy-900);
+}
+
+.btn-outline:hover {
+  background-color: var(--navy-900);
+  color: white;
+}
+
+.btn-white {
+  background-color: white;
+  color: var(--navy-900);
+  border: none;
+}
+
+.btn-white:hover {
+  background-color: var(--gray-100);
+}
+
+/* Card Component */
+.card {
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* Section Styling */
+.section {
+  padding: 5rem 0;
+}
+
+.section-alt {
+  background-color: var(--gray-50);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Link Styles */
+a {
+  color: var(--navy-500);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--navy-700);
+}
+
+/* Input Styles */
+.input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--navy-500);
+  box-shadow: 0 0 0 3px rgba(0, 87, 168, 0.1);
+}
+
+/* Utility Classes */
+.text-navy {
+  color: var(--navy-900);
+}
+
+.text-accent {
+  color: var(--accent-red);
+}
+
+.bg-navy {
+  background-color: var(--navy-900);
+}
+
+.bg-accent {
+  background-color: var(--accent-red);
 }

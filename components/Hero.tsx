@@ -124,50 +124,50 @@ export default function Hero({ onOpenWhitelist }: HeroProps) {
                                 <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center">
                                     <Sparkles className="w-5 h-5 text-blue-600" />
                                 </div>
-                                <span className="text-[10px] font-black uppercase tracking-widest text-blue-500">Caso de Éxito Conectian</span>
+                                <span className="text-[10px] font-black uppercase tracking-widest text-blue-500">{t.hero.card.badge}</span>
                             </div>
 
                             {/* Client Problem Quote */}
                             <div className="mb-6 p-4 rounded-sm bg-[var(--slate-50)] border-l-4 border-[var(--ai-primary)]">
                                 <p className="text-sm text-[var(--slate-600)] italic">
-                                    "Tardamos 10 min por factura (8.000/mes). ¿Hay solución?"
+                                    "{t.hero.card.quote}"
                                 </p>
                             </div>
 
-                            <h3 className="text-2xl font-bold mb-6 text-[var(--slate-900)]">Automatización de facturas con IA</h3>
+                            <h3 className="text-2xl font-bold mb-6 text-[var(--slate-900)]">{t.hero.card.title}</h3>
 
                             <div className="space-y-4">
                                 <div className="flex items-start gap-3">
                                     <CheckCircle2 className="w-5 h-5 text-emerald-500 mt-0.5" />
                                     <div>
-                                        <p className="text-sm font-bold text-[var(--slate-800)]">Resultado real</p>
-                                        <p className="text-sm text-[var(--slate-500)]">10 → 2,5 min/factura (-667 h/mes)</p>
+                                        <p className="text-sm font-bold text-[var(--slate-800)]">{t.hero.card.result_label}</p>
+                                        <p className="text-sm text-[var(--slate-500)]">{t.hero.card.result_value}</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-3">
                                     <CheckCircle2 className="w-5 h-5 text-emerald-500 mt-0.5" />
                                     <div>
-                                        <p className="text-sm font-bold text-[var(--slate-800)]">ROI conseguido</p>
-                                        <p className="text-sm text-[var(--slate-500)]">Menos de 9 meses</p>
+                                        <p className="text-sm font-bold text-[var(--slate-800)]">{t.hero.card.roi_label}</p>
+                                        <p className="text-sm text-[var(--slate-500)]">{t.hero.card.roi_value}</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-3">
                                     <CheckCircle2 className="w-5 h-5 text-emerald-500 mt-0.5" />
                                     <div>
-                                        <p className="text-sm font-bold text-[var(--slate-800)]">Implementado en</p>
-                                        <p className="text-sm text-[var(--slate-500)]">Sector retail, +200 empleados</p>
+                                        <p className="text-sm font-bold text-[var(--slate-800)]">{t.hero.card.impl_label}</p>
+                                        <p className="text-sm text-[var(--slate-500)]">{t.hero.card.impl_value}</p>
                                     </div>
                                 </div>
                             </div>
 
                             <div className="pt-6 border-t border-[var(--slate-50)]">
-                                <p className="text-[10px] font-medium text-[var(--slate-400)] italic">Caso real verificado y documentado por CONECTIAN.</p>
+                                <p className="text-[10px] font-medium text-[var(--slate-400)] italic">{t.hero.card.footer}</p>
                             </div>
 
                             {/* Verification Badge */}
                             <div className="absolute -top-4 -right-4 px-4 py-2 rounded-full bg-[var(--ai-primary)] text-white text-[10px] font-bold shadow-lg flex items-center gap-2">
                                 <ShieldCheck className="w-3.5 h-3.5" />
-                                CASO VERIFICADO
+                                {t.hero.card.verified}
                             </div>
                         </motion.div>
 
@@ -181,8 +181,8 @@ export default function Hero({ onOpenWhitelist }: HeroProps) {
                                 <Clock className="w-5 h-5 text-green-500" />
                             </div>
                             <div>
-                                <p className="text-lg font-black text-green-600">-75% tiempo</p>
-                                <p className="text-[10px] font-bold text-[var(--slate-400)] uppercase">Procesamiento de facturas</p>
+                                <p className="text-lg font-black text-green-600">{t.hero.card.metric1_val}</p>
+                                <p className="text-[10px] font-bold text-[var(--slate-400)] uppercase">{t.hero.card.metric1_label}</p>
                             </div>
                         </motion.div>
 
@@ -195,8 +195,8 @@ export default function Hero({ onOpenWhitelist }: HeroProps) {
                                 <TrendingUp className="w-5 h-5 text-emerald-500" />
                             </div>
                             <div>
-                                <p className="text-lg font-black text-emerald-600">+50% ventas</p>
-                                <p className="text-[10px] font-bold text-[var(--slate-400)] uppercase">Leads priorizados por IA</p>
+                                <p className="text-lg font-black text-emerald-600">{t.hero.card.metric2_val}</p>
+                                <p className="text-[10px] font-bold text-[var(--slate-400)] uppercase">{t.hero.card.metric2_label}</p>
                             </div>
                         </motion.div>
 

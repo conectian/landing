@@ -19,7 +19,24 @@ export const translations = {
             highlight2: "IA que ya funciona",
             description: "No experimentamos contigo. Aplicamos soluciones de Inteligencia Artificial que ya han demostrado éxito en empresas como la tuya. Casos reales, métricas reales, resultados reales.",
             btn_cases: "Ver casos de éxito",
-            btn_consult: "Consulta gratuita"
+            btn_consult: "Consulta gratuita",
+            card: {
+                badge: "Caso de Éxito Conectian",
+                quote: "Tardamos 10 min por factura (8.000/mes). ¿Hay solución?",
+                title: "Automatización de facturas con IA",
+                result_label: "Resultado real",
+                result_value: "10 → 2,5 min/factura (-667 h/mes)",
+                roi_label: "ROI conseguido",
+                roi_value: "Menos de 9 meses",
+                impl_label: "Implementado en",
+                impl_value: "Sector retail, +200 empleados",
+                footer: "Caso real verificado y documentado por CONECTIAN.",
+                verified: "CASO VERIFICADO",
+                metric1_val: "-75% tiempo",
+                metric1_label: "Procesamiento de facturas",
+                metric2_val: "+50% ventas",
+                metric2_label: "Leads priorizados por IA"
+            }
         },
         business: {
             title: "Encuentra la solución IA para tu negocio",
@@ -178,7 +195,24 @@ export const translations = {
             highlight2: "AI that already works",
             description: "We don't experiment with you. We apply Artificial Intelligence solutions that have already proven success in companies like yours. Real cases, real metrics, real results.",
             btn_cases: "See success cases",
-            btn_consult: "Free consultation"
+            btn_consult: "Free consultation",
+            card: {
+                badge: "Conectian Success Case",
+                quote: "It takes 10 min per invoice (8,000/mo). Is there a solution?",
+                title: "Invoice Automation with AI",
+                result_label: "Real result",
+                result_value: "10 → 2.5 min/invoice (-667 h/mo)",
+                roi_label: "ROI achieved",
+                roi_value: "Less than 9 months",
+                impl_label: "Implemented in",
+                impl_value: "Retail sector, +200 employees",
+                footer: "Real case verified and documented by CONECTIAN.",
+                verified: "VERIFIED CASE",
+                metric1_val: "-75% time",
+                metric1_label: "Invoice processing",
+                metric2_val: "+50% sales",
+                metric2_label: "AI prioritized leads"
+            }
         },
         business: {
             title: "Find the AI solution for your business",

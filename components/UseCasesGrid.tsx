@@ -1,182 +1,159 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, TrendingUp, Database, Cloud, Code, BarChart3 } from "lucide-react";
+import { ArrowRight, Receipt, Headset, Users, TrendingUp, CheckCircle2 } from "lucide-react";
 
-const techIcons: Record<string, React.ReactNode> = {
-    Python: <Code className="w-4 h-4" />,
-    AWS: <Cloud className="w-4 h-4" />,
-    "Machine Learning": <BarChart3 className="w-4 h-4" />,
-    "Big Data": <Database className="w-4 h-4" />,
-};
-
-const useCases = [
+const successCases = [
     {
-        id: 1,
-        title: "Optimización de Cadena de Suministro",
-        sector: "Logística",
-        problem: "Reducción de costes operativos y tiempos de entrega mediante predicción de demanda y optimización de rutas.",
-        stack: ["Python", "AWS", "Machine Learning"],
-        kpi: { value: "-32%", label: "Costes Logísticos" },
-        impact: "4.2M€ ahorro anual",
+        id: "ap-automation",
+        category: "Operaciones",
+        title: "Automatización de Facturas (AP Automation)",
+        description: "Reducción drástica del tiempo de procesamiento mediante extracción inteligente de datos y validación automática.",
+        metrics: [
+            { label: "Tiempo / Factura", before: "10 min", after: "2.5 min" },
+            { label: "ROI Estimado", value: "< 9 meses" }
+        ],
+        icon: <Receipt className="w-6 h-6 text-[var(--ai-primary)]" />,
+        tags: ["Finanzas", "Back-office"]
     },
     {
-        id: 2,
-        title: "Automatización de Due Diligence",
-        sector: "Legal & M&A",
-        problem: "Análisis automatizado de contratos y documentación legal para operaciones de fusiones y adquisiciones.",
-        stack: ["Python", "Machine Learning", "Big Data"],
-        kpi: { value: "-75%", label: "Tiempo de Revisión" },
-        impact: "800+ horas/mes liberadas",
+        id: "l1-support",
+        category: "Atención al Cliente",
+        title: "Soporte L1 con IA Generativa",
+        description: "Resolución de consultas comunes 24/7 con integración en CRM para una experiencia personalizada y fluida.",
+        metrics: [
+            { label: "Respuesta", before: "24h", after: "3h" },
+            { label: "Ahorro Costes", value: "22%" }
+        ],
+        icon: <Headset className="w-6 h-6 text-[var(--ai-primary)]" />,
+        tags: ["Soporte", "GenAI"]
     },
     {
-        id: 3,
-        title: "Detección de Fraude Financiero",
-        sector: "Banca",
-        problem: "Sistema de detección en tiempo real de transacciones fraudulentas con machine learning avanzado.",
-        stack: ["Python", "AWS", "Machine Learning"],
-        kpi: { value: "99.2%", label: "Precisión Detección" },
-        impact: "15M€ fraude evitado",
-    },
-    {
-        id: 4,
-        title: "Chatbot Atención al Cliente",
-        sector: "Retail",
-        problem: "Automatización del 80% de consultas de primer nivel con comprensión de lenguaje natural.",
-        stack: ["Python", "AWS", "Machine Learning"],
-        kpi: { value: "+45%", label: "Satisfacción Cliente" },
-        impact: "24/7 disponibilidad",
-    },
-    {
-        id: 5,
-        title: "Mantenimiento Predictivo Industrial",
-        sector: "Manufactura",
-        problem: "Predicción de fallos en maquinaria industrial antes de que ocurran, minimizando paradas no planificadas.",
-        stack: ["Python", "Big Data", "Machine Learning"],
-        kpi: { value: "-60%", label: "Paradas No Planificadas" },
-        impact: "2.8M€ ahorro anual",
-    },
-    {
-        id: 6,
-        title: "Scoring Crediticio Avanzado",
-        sector: "Fintech",
-        problem: "Modelo de scoring alternativo que incorpora datos no tradicionales para mejorar decisiones de crédito.",
-        stack: ["Python", "AWS", "Big Data"],
-        kpi: { value: "+28%", label: "Tasa de Aprobación" },
-        impact: "Mora reducida 40%",
-    },
+        id: "lead-scoring",
+        category: "Ventas",
+        title: "Priorización Inteligente de Leads",
+        description: "Identificación de prospectos con mayor probabilidad de conversión usando modelos predictivos avanzados.",
+        metrics: [
+            { label: "Cierre Ventas", value: "+50%" },
+            { label: "Ciclo Venta", value: "-15%" }
+        ],
+        icon: <Users className="w-6 h-6 text-[var(--ai-primary)]" />,
+        tags: ["Ventas", "Predictivo"]
+    }
 ];
 
-export default function UseCasesGrid() {
+interface UseCasesGridProps {
+    onOpenWhitelist: () => void;
+}
+
+export default function UseCasesGrid({ onOpenWhitelist }: UseCasesGridProps) {
     return (
-        <section id="casos" className="section bg-white">
-            <div className="container mx-auto max-w-7xl px-4 lg:px-8">
-                {/* Section Header */}
+        <section id="soluciones" className="section-container">
+            {/* Section Header */}
+            <div className="text-center max-w-3xl mx-auto mb-16">
                 <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                >
+                    <span className="badge-ai">Casos de Éxito Reales</span>
+                </motion.div>
+                <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                    className="text-center mb-12"
+                    transition={{ delay: 0.1 }}
+                    className="text-4xl lg:text-5xl font-bold mb-6"
                 >
-                    <span className="text-[var(--accent-red)] font-semibold text-sm uppercase tracking-wider">
-                        Casos de Éxito
-                    </span>
-                    <h2 className="text-3xl lg:text-4xl font-bold text-[var(--navy-900)] mt-3 mb-4">
-                        Soluciones IA con Impacto Real
-                    </h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
-                        Descubre cómo empresas líderes han transformado sus operaciones con nuestras soluciones de inteligencia artificial.
-                    </p>
-                </motion.div>
-
-                {/* Cards Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {useCases.map((useCase, index) => (
-                        <motion.article
-                            key={useCase.id}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: index * 0.1 }}
-                            className="card group cursor-pointer"
-                        >
-                            {/* Card Header */}
-                            <div className="p-6 pb-4 border-b border-gray-100">
-                                <div className="flex items-center justify-between mb-3">
-                                    <span className="text-xs font-semibold text-[var(--navy-500)] bg-[var(--navy-900)]/5 px-3 py-1 rounded-full">
-                                        {useCase.sector}
-                                    </span>
-                                    <div className="flex items-center gap-1 text-[var(--accent-red)]">
-                                        <TrendingUp className="w-4 h-4" />
-                                        <span className="text-sm font-bold">{useCase.kpi.value}</span>
-                                    </div>
-                                </div>
-                                <h3 className="text-lg font-bold text-[var(--navy-900)] group-hover:text-[var(--navy-700)] transition-colors">
-                                    {useCase.title}
-                                </h3>
-                            </div>
-
-                            {/* Card Body */}
-                            <div className="p-6 pt-4">
-                                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                                    {useCase.problem}
-                                </p>
-
-                                {/* Tech Stack */}
-                                <div className="flex flex-wrap gap-2 mb-4">
-                                    {useCase.stack.map((tech) => (
-                                        <span
-                                            key={tech}
-                                            className="inline-flex items-center gap-1.5 text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded"
-                                        >
-                                            {techIcons[tech]}
-                                            {tech}
-                                        </span>
-                                    ))}
-                                </div>
-
-                                {/* KPI & Impact */}
-                                <div className="bg-[var(--gray-50)] rounded-lg p-3 mb-4">
-                                    <div className="flex items-center justify-between">
-                                        <div>
-                                            <p className="text-xs text-gray-500">{useCase.kpi.label}</p>
-                                            <p className="text-lg font-bold text-[var(--navy-900)]">{useCase.kpi.value}</p>
-                                        </div>
-                                        <div className="text-right">
-                                            <p className="text-xs text-gray-500">Impacto</p>
-                                            <p className="text-sm font-semibold text-[var(--accent-red)]">{useCase.impact}</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* CTA Link */}
-                                <a
-                                    href={`#caso-${useCase.id}`}
-                                    className="inline-flex items-center gap-2 text-sm font-medium text-[var(--navy-900)] hover:text-[var(--accent-red)] transition-colors group/link"
-                                >
-                                    Ver detalles
-                                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                                </a>
-                            </div>
-                        </motion.article>
-                    ))}
-                </div>
-
-                {/* View All CTA */}
-                <motion.div
+                    Encuentra tu solución
+                </motion.h2>
+                <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                    className="text-center mt-12"
+                    transition={{ delay: 0.2 }}
+                    className="text-lg text-[var(--slate-500)]"
                 >
-                    <a href="#todos-casos" className="btn btn-outline">
-                        Ver todos los casos de éxito
-                        <ArrowRight className="w-4 h-4" />
-                    </a>
-                </motion.div>
+                    Encuentra la solución ideal entre cientos de casos de éxito verificados de nuestra red de partners. No reinventamos la rueda: te conectamos con lo que ya funciona.
+                </motion.p>
             </div>
+
+            {/* Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {successCases.map((item, index) => (
+                    <motion.div
+                        key={item.id}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.1 }}
+                        className="card-ai group hover:border-[var(--ai-primary)]/30"
+                    >
+                        <div className="flex items-center gap-4 mb-6">
+                            <div className="w-12 h-12 rounded-xl bg-[var(--ai-primary)]/10 flex items-center justify-center">
+                                {item.icon}
+                            </div>
+                            <div>
+                                <span className="text-xs font-bold text-[var(--ai-primary)] uppercase tracking-widest">{item.category}</span>
+                                <h3 className="text-xl font-bold mt-1">{item.title}</h3>
+                            </div>
+                        </div>
+
+                        <p className="text-[var(--slate-500)] mb-8 line-clamp-2">
+                            {item.description}
+                        </p>
+
+                        <div className="space-y-4 mb-8">
+                            {item.metrics.map((metric, mIdx) => (
+                                <div key={mIdx} className="flex items-center justify-between p-3 rounded-lg bg-[var(--slate-50)] border border-[var(--slate-100)]">
+                                    <span className="text-sm font-medium text-[var(--slate-600)]">{metric.label}</span>
+                                    <div className="flex items-center gap-2">
+                                        {metric.before && (
+                                            <span className="text-xs text-[var(--slate-400)] line-through">{metric.before}</span>
+                                        )}
+                                        <span className="text-sm font-bold text-[var(--ai-primary)]">
+                                            {metric.after || metric.value}
+                                        </span>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="flex items-center justify-between pt-6 border-t border-[var(--slate-100)]">
+                            <div className="flex gap-2">
+                                {item.tags.map(tag => (
+                                    <span key={tag} className="text-[10px] font-bold px-2 py-0.5 rounded bg-[var(--slate-200)] text-[var(--slate-600)]">
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+                            <button className="text-[var(--ai-primary)] font-bold text-sm flex items-center gap-1 group/btn">
+                                Leer más
+                                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                            </button>
+                        </div>
+                    </motion.div>
+                ))}
+            </div>
+
+            {/* Bottom Info */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                className="mt-16 p-8 rounded-3xl bg-[var(--slate-900)] text-white flex flex-col md:flex-row items-center justify-between gap-8"
+            >
+                <div>
+                    <h4 className="text-2xl font-bold mb-2 !text-white">¿No encuentras tu caso específico?</h4>
+                    <p className="text-slate-400">Nuestro equipo de expertos puede analizar tu problema y proponer soluciones ya probadas.</p>
+                </div>
+                <button
+                    onClick={onOpenWhitelist}
+                    className="btn-ai btn-ai-primary whitespace-nowrap"
+                >
+                    Solicitar Auditoría Gratuita
+                </button>
+            </motion.div>
         </section>
     );
 }

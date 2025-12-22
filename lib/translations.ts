@@ -12,12 +12,10 @@ export const translations = {
             acceso: "Acceso Clientes"
         },
         hero: {
-            badge: "LA IA QUE ESCALA",
-            title_part1: "¿Tu equipo sigue perdiendo el tiempo en problemas que ",
-            title_part2: "ya están resueltos?",
-            highlight1: "problema",
-            highlight2: "IA que ya funciona",
-            description: "No experimentes con tu empresa. Implementamos soluciones de IA ya probadas con métricas verificadas y ROI garantizado.",
+            badge: "CONECTIAN",
+            title_part1: "Resolvemos tu problema ",
+            title_part2: "con IA que ya funciona",
+            description: "No experimentamos contigo. Aplicamos soluciones de Inteligencia Artificial que ya han demostrado éxito en empresas como la tuya. Casos reales, métricas reales, resultados reales.",
             btn_cases: "Ver casos de éxito",
             btn_consult: "Consulta gratuita"
         },
@@ -171,12 +169,10 @@ export const translations = {
             acceso: "Client Access"
         },
         hero: {
-            badge: "AI THAT SCALES",
-            title_part1: "Is your team still wasting time on problems that are ",
-            title_part2: "already solved?",
-            highlight1: "problem",
-            highlight2: "AI that already works",
-            description: "Don't experiment with your company. We implement proven AI solutions with verified metrics and guaranteed ROI.",
+            badge: "CONECTIAN",
+            title_part1: "We solve your problem ",
+            title_part2: "with AI that already works",
+            description: "We don't experiment with you. We apply Artificial Intelligence solutions that have already proven success in companies like yours. Real cases, real metrics, real results.",
             btn_cases: "See success cases",
             btn_consult: "Free consultation"
         },

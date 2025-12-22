@@ -49,20 +49,13 @@ export default function Hero({ onOpenWhitelist }: HeroProps) {
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     {/* Left Column - Content */}
                     <div className="text-left max-w-2xl">
-                        <motion.div
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                        >
-                            <span className="badge-ai">{t.hero.badge}</span>
-                        </motion.div>
-
                         <motion.h1
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.1 }}
-                            className="text-4xl md:text-6xl font-black text-[var(--slate-900)] mt-6 mb-8 leading-[1.1] tracking-tight"
+                            className="text-5xl md:text-7xl font-black text-[var(--slate-900)] mb-8 leading-[1] tracking-tight"
                         >
-                            {t.hero.title_part1}
+                            {t.hero.title_part1} <br className="hidden md:block" />
                             <span className="text-[var(--ai-primary)]">
                                 {t.hero.title_part2}
                             </span>
@@ -72,7 +65,7 @@ export default function Hero({ onOpenWhitelist }: HeroProps) {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2 }}
-                            className="text-lg md:text-xl text-[var(--slate-600)] mb-10 leading-relaxed font-medium"
+                            className="text-xl md:text-2xl text-[var(--slate-600)] mb-10 leading-snug font-medium max-w-xl"
                         >
                             {t.hero.description}
                         </motion.p>

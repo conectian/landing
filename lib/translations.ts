@@ -13,8 +13,10 @@ export const translations = {
         },
         hero: {
             badge: "CONECTIAN",
-            title_part1: "Resolvemos tu problema ",
-            title_part2: "con IA que ya funciona",
+            title_part1: "Resolvemos tu ",
+            highlight1: "problema",
+            title_part2: "con ",
+            highlight2: "IA que ya funciona",
             description: "No experimentamos contigo. Aplicamos soluciones de Inteligencia Artificial que ya han demostrado éxito en empresas como la tuya. Casos reales, métricas reales, resultados reales.",
             btn_cases: "Ver casos de éxito",
             btn_consult: "Consulta gratuita"
@@ -170,8 +172,10 @@ export const translations = {
         },
         hero: {
             badge: "CONECTIAN",
-            title_part1: "We solve your problem ",
-            title_part2: "with AI that already works",
+            title_part1: "We solve your ",
+            highlight1: "problem",
+            title_part2: "with ",
+            highlight2: "AI that already works",
             description: "We don't experiment with you. We apply Artificial Intelligence solutions that have already proven success in companies like yours. Real cases, real metrics, real results.",
             btn_cases: "See success cases",
             btn_consult: "Free consultation"

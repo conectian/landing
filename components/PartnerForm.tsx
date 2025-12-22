@@ -6,7 +6,11 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { useLanguage } from "@/context/LanguageContext";
 
-export default function PartnerForm() {
+interface PartnerFormProps {
+    onOpenWhitelist?: () => void;
+}
+
+export default function PartnerForm({ onOpenWhitelist }: PartnerFormProps) {
     const { t, language } = useLanguage();
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({

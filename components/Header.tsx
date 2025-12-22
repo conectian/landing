@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-    { name: "Casos de Éxito", href: "#soluciones" },
-    { name: "IA para Clientes", href: "#empresas" },
-    { name: "Red de Partners", href: "#partners" },
-    { name: "Preguntas Frecuentes", href: "#faq" },
+    { name: "Casos de Éxito", href: "/#soluciones" },
+    { name: "IA para Clientes", href: "/#empresas" },
+    { name: "Red de Partners", href: "/#partners" },
+    { name: "Preguntas Frecuentes", href: "/#faq" },
 ];
 
 interface HeaderProps {

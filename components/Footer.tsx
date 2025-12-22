@@ -25,24 +25,24 @@ export default function Footer({ onOpenWhitelist }: FooterProps) {
                         <p className="text-[var(--slate-500)] text-sm mb-8 leading-relaxed">
                             Resolvemos tu problema con IA que ya funciona. No experimentamos, aplicamos soluciones probadas con ROI garantizado.
                         </p>
-                        <div className="flex gap-4">
+                        {/* <div className="flex gap-4">
                             <a href="#" className="w-10 h-10 rounded-full bg-[var(--slate-50)] flex items-center justify-center text-[var(--slate-600)] hover:bg-[var(--ai-glow)] hover:text-[var(--ai-primary)] transition-colors">
                                 <Linkedin className="w-5 h-5" />
                             </a>
                             <a href="#" className="w-10 h-10 rounded-full bg-[var(--slate-50)] flex items-center justify-center text-[var(--slate-600)] hover:bg-[var(--ai-glow)] hover:text-[var(--ai-primary)] transition-colors">
                                 <Twitter className="w-5 h-5" />
                             </a>
-                        </div>
+                        </div> */}
                     </div>
 
                     {/* Quick Links */}
                     <div>
                         <h4 className="font-bold text-[var(--slate-900)] mb-6">Plataforma</h4>
                         <ul className="space-y-4">
-                            <li><Link href="#soluciones" className="text-sm text-[var(--slate-500)] hover:text-[var(--ai-primary)] transition-colors">Casos de Éxito de IA</Link></li>
-                            <li><Link href="#empresas" className="text-sm text-[var(--slate-500)] hover:text-[var(--ai-primary)] transition-colors">Soluciones para Clientes</Link></li>
-                            <li><Link href="#partners" className="text-sm text-[var(--slate-500)] hover:text-[var(--ai-primary)] transition-colors">Unirse como Proveedor</Link></li>
-                            <li><Link href="#faq" className="text-sm text-[var(--slate-500)] hover:text-[var(--ai-primary)] transition-colors">Preguntas Frecuentes</Link></li>
+                            <li><Link href="/#soluciones" className="text-sm text-[var(--slate-500)] hover:text-[var(--ai-primary)] transition-colors">Casos de Éxito de IA</Link></li>
+                            <li><Link href="/#empresas" className="text-sm text-[var(--slate-500)] hover:text-[var(--ai-primary)] transition-colors">Soluciones para Clientes</Link></li>
+                            <li><Link href="/#partners" className="text-sm text-[var(--slate-500)] hover:text-[var(--ai-primary)] transition-colors">Unirse como Proveedor</Link></li>
+                            <li><Link href="/#faq" className="text-sm text-[var(--slate-500)] hover:text-[var(--ai-primary)] transition-colors">Preguntas Frecuentes</Link></li>
                         </ul>
                     </div>
 
@@ -50,10 +50,9 @@ export default function Footer({ onOpenWhitelist }: FooterProps) {
                     <div>
                         <h4 className="font-bold text-[var(--slate-900)] mb-6">Compañía</h4>
                         <ul className="space-y-4">
-                            <li><Link href="#" className="text-sm text-[var(--slate-500)] hover:text-[var(--ai-primary)] transition-colors">Sobre nosotros</Link></li>
-                            <li><Link href="#" className="text-sm text-[var(--slate-500)] hover:text-[var(--ai-primary)] transition-colors">Casos de éxito</Link></li>
-                            <li><Link href="#" className="text-sm text-[var(--slate-500)] hover:text-[var(--ai-primary)] transition-colors">Aviso Legal</Link></li>
-                            <li><Link href="#" className="text-sm text-[var(--slate-500)] hover:text-[var(--ai-primary)] transition-colors">Privacidad</Link></li>
+                            <li><Link href="/aviso-legal" className="text-sm text-[var(--slate-500)] hover:text-[var(--ai-primary)] transition-colors">Aviso Legal</Link></li>
+                            <li><Link href="/privacidad" className="text-sm text-[var(--slate-500)] hover:text-[var(--ai-primary)] transition-colors">Privacidad</Link></li>
+                            <li><Link href="/terminos" className="text-sm text-[var(--slate-500)] hover:text-[var(--ai-primary)] transition-colors">Términos</Link></li>
                         </ul>
                     </div>
 
@@ -65,12 +64,6 @@ export default function Footer({ onOpenWhitelist }: FooterProps) {
                                 <a href="mailto:info@conectian.com" className="flex items-center gap-3 text-sm text-[var(--slate-500)] hover:text-[var(--ai-primary)] transition-colors">
                                     <Mail className="w-4 h-4" />
                                     info@conectian.com
-                                </a>
-                            </li>
-                            <li>
-                                <a href="tel:+34900000000" className="flex items-center gap-3 text-sm text-[var(--slate-500)] hover:text-[var(--ai-primary)] transition-colors">
-                                    <Phone className="w-4 h-4" />
-                                    +34 900 000 000
                                 </a>
                             </li>
                             <li className="pt-4">

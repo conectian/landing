@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Send, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 interface WhitelistModalProps {
     isOpen: boolean;
@@ -12,16 +13,46 @@ interface WhitelistModalProps {
 export default function WhitelistModal({ isOpen, onClose }: WhitelistModalProps) {
     const [step, setStep] = useState<"form" | "success">("form");
     const [loading, setLoading] = useState(false);
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        message: ""
+    });
 
+    const handleClose = () => {
+        onClose();
+        // Reset state after animation
+        setTimeout(() => {
+            setStep("form");
+            setFormData({ name: "", email: "", message: "" });
+        }, 300);
+    };
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setLoading(true);
 
-        // Simulate API call / Email sending
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        const templateParams = {
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            time: new Date().toLocaleString(),
+            title: "Nueva solicitud de Whitelist",
+        };
 
-        setLoading(false);
-        setStep("success");
+        try {
+            await emailjs.send(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
+                templateParams,
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ""
+            );
+            setStep("success");
+        } catch (error) {
+            console.error("Error sending email:", error);
+            alert("Hubo un error al enviar tu solicitud. Por favor, inténtalo de nuevo o escribe a info@conectian.com");
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -33,7 +64,7 @@ export default function WhitelistModal({ isOpen, onClose }: WhitelistModalProps)
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        onClick={onClose}
+                        onClick={handleClose}
                         className="absolute inset-0 bg-[var(--slate-900)]/60 backdrop-blur-sm"
                     />
 
@@ -46,7 +77,7 @@ export default function WhitelistModal({ isOpen, onClose }: WhitelistModalProps)
                     >
                         {/* Close button */}
                         <button
-                            onClick={onClose}
+                            onClick={handleClose}
                             className="absolute top-6 right-6 p-2 rounded-full hover:bg-[var(--slate-50)] transition-colors"
                         >
                             <X className="w-6 h-6 text-[var(--slate-400)]" />
@@ -70,6 +101,8 @@ export default function WhitelistModal({ isOpen, onClose }: WhitelistModalProps)
                                         <input
                                             required
                                             type="text"
+                                            value={formData.name}
+                                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                             placeholder="Ej. Juan Pérez"
                                             className="w-full px-5 py-4 rounded-2xl border border-[var(--slate-100)] bg-[var(--slate-50)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--ai-primary)]/20 focus:border-[var(--ai-primary)] font-medium transition-all"
                                         />
@@ -79,6 +112,8 @@ export default function WhitelistModal({ isOpen, onClose }: WhitelistModalProps)
                                         <input
                                             required
                                             type="email"
+                                            value={formData.email}
+                                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                             placeholder="juan@empresa.com"
                                             className="w-full px-5 py-4 rounded-2xl border border-[var(--slate-100)] bg-[var(--slate-50)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--ai-primary)]/20 focus:border-[var(--ai-primary)] font-medium transition-all"
                                         />
@@ -88,6 +123,8 @@ export default function WhitelistModal({ isOpen, onClose }: WhitelistModalProps)
                                         <textarea
                                             required
                                             rows={3}
+                                            value={formData.message}
+                                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                             placeholder="Cuéntanos brevemente tus necesidades..."
                                             className="w-full px-5 py-4 rounded-2xl border border-[var(--slate-100)] bg-[var(--slate-50)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--ai-primary)]/20 focus:border-[var(--ai-primary)] font-medium transition-all resize-none"
                                         />
@@ -123,11 +160,11 @@ export default function WhitelistModal({ isOpen, onClose }: WhitelistModalProps)
                                 </div>
                                 <h2 className="text-3xl font-bold text-[var(--slate-900)] mb-4">¡Solicitud Enviada!</h2>
                                 <p className="text-[var(--slate-500)] mb-10 leading-relaxed">
-                                    Tu mensaje ha sido enviado correctamente a **info@conectian.com**. <br />
+                                    Tu mensaje ha sido enviado correctamente a <strong>info@conectian.com</strong>. <br />
                                     Te contactaremos muy pronto para darte acceso prioritario.
                                 </p>
                                 <button
-                                    onClick={onClose}
+                                    onClick={handleClose}
                                     className="btn-ai btn-ai-secondary w-full"
                                 >
                                     Cerrar

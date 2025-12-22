@@ -60,7 +60,7 @@ export default function PartnersSection({ onOpenWhitelist }: PartnersSectionProp
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl lg:text-5xl font-bold mb-6"
+                        className="text-3xl lg:text-5xl font-bold mb-6"
                     >
                         Portal para <span className="text-purple-600">Proveedores de IA</span>
                     </motion.h2>

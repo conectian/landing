@@ -42,7 +42,7 @@ export default function ValueProposition() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl lg:text-5xl font-bold mb-6"
+                        className="text-3xl lg:text-5xl font-bold mb-6"
                     >
                         Aplicamos lo que <br />
                         <span className="text-[var(--ai-primary)]">ya funciona</span>

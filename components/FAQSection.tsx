@@ -40,7 +40,7 @@ export default function FAQSection({ onOpenWhitelist }: FAQSectionProps) {
                     className="text-center mb-16"
                 >
                     <span className="badge-ai mb-4">Preguntas Frecuentes</span>
-                    <h2 className="text-4xl font-bold text-[var(--slate-900)]">Todo lo que necesitas <br /> saber sobre <span className="text-[var(--ai-primary)]">Conectian</span></h2>
+                    <h2 className="text-3xl lg:text-4xl font-bold text-[var(--slate-900)]">Todo lo que necesitas <br /> saber sobre <span className="text-[var(--ai-primary)]">Conectian</span></h2>
                 </motion.div>
 
                 <div className="space-y-4">

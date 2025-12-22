@@ -18,7 +18,7 @@ export default function Hero({ onOpenWhitelist }: HeroProps) {
     }, []);
 
     return (
-        <section className="relative min-h-[60vh] flex items-center pt-32 pb-20 overflow-hidden">
+        <section className="relative min-h-[70vh] lg:min-h-[80vh] flex items-center pt-24 lg:pt-32 pb-16 lg:pb-20 overflow-hidden">
             {/* Video Background */}
             <div className="absolute inset-0 z-0 bg-indigo-900">
                 <video
@@ -59,7 +59,7 @@ export default function Hero({ onOpenWhitelist }: HeroProps) {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-5xl lg:text-7xl font-bold tracking-tight mb-8"
+                        className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 lg:mb-8"
                     >
                         Resolvemos tu problema con <br className="hidden lg:block" />
                         <span className="text-[var(--ai-primary)] relative">
@@ -74,7 +74,7 @@ export default function Hero({ onOpenWhitelist }: HeroProps) {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-xl text-[var(--slate-500)] mb-10 max-w-2xl leading-relaxed"
+                        className="text-lg lg:text-xl text-[var(--slate-500)] mb-10 max-w-2xl leading-relaxed"
                     >
                         Accede al primer marketplace de <strong>casos de éxito de IA verificados</strong>. Identificamos tu problema y te conectamos con el proveedor que ya ha resuelto retos idénticos en empresas como la tuya.
                     </motion.p>

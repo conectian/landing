@@ -173,6 +173,23 @@ export const translations = {
             terms: "Términos",
             cta_btn: "Hablar con un experto",
             all_rights: "Todos los derechos reservados"
+        },
+        whitelist: {
+            badge: "Acceso Anticipado",
+            title_part1: "Únete a la ",
+            title_part2: "Whitelist de Conectian",
+            description: "Estamos finalizando los detalles. Inscríbete para ser de los primeros en implementar IA real en tu negocio.",
+            name_label: "Nombre completo",
+            name_placeholder: "Ej. Juan Pérez",
+            email_label: "Correo electrónico profesional",
+            email_placeholder: "juan@empresa.com",
+            message_label: "¿Qué problema quieres resolver con IA?",
+            message_placeholder: "Cuéntanos brevemente tus necesidades...",
+            btn_send: "Enviar solicitud",
+            footer: "Al enviar aceptas nuestra política de privacidad. Notificaremos tu interés a info@conectian.com",
+            success_title: "¡Solicitud Enviada!",
+            success_desc: "Tu mensaje ha sido enviado correctamente a info@conectian.com. Te contactaremos muy pronto para darte acceso prioritario.",
+            btn_close: "Cerrar"
         }
     },
     en: {
@@ -349,6 +366,23 @@ export const translations = {
             terms: "Terms of Service",
             cta_btn: "Talk to an Expert",
             all_rights: "All rights reserved"
+        },
+        whitelist: {
+            badge: "Early Access",
+            title_part1: "Join the ",
+            title_part2: "Conectian Whitelist",
+            description: "We are finalizing the details. Sign up to be one of the first to implement real AI in your business.",
+            name_label: "Full Name",
+            name_placeholder: "e.g. John Doe",
+            email_label: "Professional Email",
+            email_placeholder: "john@company.com",
+            message_label: "What problem do you want to solve with AI?",
+            message_placeholder: "Briefly tell us your needs...",
+            btn_send: "Send Request",
+            footer: "By sending you accept our privacy policy. We will notify your interest to info@conectian.com",
+            success_title: "Request Sent!",
+            success_desc: "Your message has been sent successfully to info@conectian.com. We will contact you very soon to give you priority access.",
+            btn_close: "Close"
         }
     }
 };

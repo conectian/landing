@@ -5,12 +5,15 @@ import { X, Send, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
+import { useLanguage } from "@/context/LanguageContext";
+
 interface WhitelistModalProps {
     isOpen: boolean;
     onClose: () => void;
 }
 
 export default function WhitelistModal({ isOpen, onClose }: WhitelistModalProps) {
+    const { t } = useLanguage();
     const [step, setStep] = useState<"form" | "success">("form");
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
@@ -86,46 +89,46 @@ export default function WhitelistModal({ isOpen, onClose }: WhitelistModalProps)
                         {step === "form" ? (
                             <>
                                 <div className="mb-8">
-                                    <span className="badge-ai mb-4">Acceso Anticipado</span>
+                                    <span className="badge-ai mb-4">{t.whitelist.badge}</span>
                                     <h2 className="text-3xl font-bold text-[var(--slate-900)] leading-tight">
-                                        Únete a la <br /> <span className="text-[var(--ai-primary)]">Whitelist de Conectian</span>
+                                        {t.whitelist.title_part1} <br /> <span className="text-[var(--ai-primary)]">{t.whitelist.title_part2}</span>
                                     </h2>
                                     <p className="mt-4 text-[var(--slate-500)]">
-                                        Estamos finalizando los detalles. Inscríbete para ser de los primeros en implementar IA real en tu negocio.
+                                        {t.whitelist.description}
                                     </p>
                                 </div>
 
                                 <form onSubmit={handleSubmit} className="space-y-6">
                                     <div>
-                                        <label className="block text-sm font-bold text-[var(--slate-700)] mb-2 px-1">Nombre completo</label>
+                                        <label className="block text-sm font-bold text-[var(--slate-700)] mb-2 px-1">{t.whitelist.name_label}</label>
                                         <input
                                             required
                                             type="text"
                                             value={formData.name}
                                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                            placeholder="Ej. Juan Pérez"
+                                            placeholder={t.whitelist.name_placeholder}
                                             className="w-full px-5 py-4 rounded-2xl border border-[var(--slate-100)] bg-[var(--slate-50)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--ai-primary)]/20 focus:border-[var(--ai-primary)] font-medium transition-all"
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-bold text-[var(--slate-700)] mb-2 px-1">Correo electrónicoprofesional</label>
+                                        <label className="block text-sm font-bold text-[var(--slate-700)] mb-2 px-1">{t.whitelist.email_label}</label>
                                         <input
                                             required
                                             type="email"
                                             value={formData.email}
                                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                            placeholder="juan@empresa.com"
+                                            placeholder={t.whitelist.email_placeholder}
                                             className="w-full px-5 py-4 rounded-2xl border border-[var(--slate-100)] bg-[var(--slate-50)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--ai-primary)]/20 focus:border-[var(--ai-primary)] font-medium transition-all"
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-bold text-[var(--slate-700)] mb-2 px-1">¿Qué problema quieres resolver con IA?</label>
+                                        <label className="block text-sm font-bold text-[var(--slate-700)] mb-2 px-1">{t.whitelist.message_label}</label>
                                         <textarea
                                             required
                                             rows={3}
                                             value={formData.message}
                                             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                            placeholder="Cuéntanos brevemente tus necesidades..."
+                                            placeholder={t.whitelist.message_placeholder}
                                             className="w-full px-5 py-4 rounded-2xl border border-[var(--slate-100)] bg-[var(--slate-50)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--ai-primary)]/20 focus:border-[var(--ai-primary)] font-medium transition-all resize-none"
                                         />
                                     </div>
@@ -139,13 +142,13 @@ export default function WhitelistModal({ isOpen, onClose }: WhitelistModalProps)
                                             <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                                         ) : (
                                             <>
-                                                Enviar solicitud
+                                                {t.whitelist.btn_send}
                                                 <Send className="w-5 h-5" />
                                             </>
                                         )}
                                     </button>
                                     <p className="text-center text-xs text-[var(--slate-400)]">
-                                        Al enviar aceptas nuestra política de privacidad. <br /> Notificaremos tu interés a info@conectian.com
+                                        {t.whitelist.footer}
                                     </p>
                                 </form>
                             </>
@@ -158,16 +161,15 @@ export default function WhitelistModal({ isOpen, onClose }: WhitelistModalProps)
                                 <div className="w-20 h-20 rounded-full bg-green-50 flex items-center justify-center mb-6">
                                     <CheckCircle2 className="w-10 h-10 text-green-500" />
                                 </div>
-                                <h2 className="text-3xl font-bold text-[var(--slate-900)] mb-4">¡Solicitud Enviada!</h2>
+                                <h2 className="text-3xl font-bold text-[var(--slate-900)] mb-4">{t.whitelist.success_title}</h2>
                                 <p className="text-[var(--slate-500)] mb-10 leading-relaxed">
-                                    Tu mensaje ha sido enviado correctamente a <strong>info@conectian.com</strong>. <br />
-                                    Te contactaremos muy pronto para darte acceso prioritario.
+                                    {t.whitelist.success_desc}
                                 </p>
                                 <button
                                     onClick={handleClose}
                                     className="btn-ai btn-ai-secondary w-full"
                                 >
-                                    Cerrar
+                                    {t.whitelist.btn_close}
                                 </button>
                             </motion.div>
                         )}

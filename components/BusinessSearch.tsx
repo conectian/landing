@@ -77,23 +77,10 @@ Email de contacto: ${formData.email}
         }
     };
 
-    const objectives = t.nav.empresas === "Business" ? [
-        "Save costs", "Accelerate time", "Increase sales", "Compliance/Security"
-    ] : [
-        "Ahorrar coste", "Acelerar tiempo", "Aumentar ventas", "Cumplimiento/seguridad"
-    ];
+    const objectives = t.business.objective_options;
+    const timeframes = t.business.timeline_options;
+    const priorities = t.business.priority_options;
 
-    const timeframes = t.nav.empresas === "Business" ? [
-        "< 3 months", "3-6 months", "6-9 months", "9-12 months"
-    ] : [
-        "< 3 meses", "3-6 meses", "6-9 meses", "9-12 meses"
-    ];
-
-    const priorities = t.nav.empresas === "Business" ? [
-        "High", "Medium", "Low"
-    ] : [
-        "Alta", "Media", "Baja"
-    ];
 
     return (
         <section id="empresas">
@@ -261,7 +248,7 @@ Email de contacto: ${formData.email}
                                 ) : status === 'success' ? (
                                     <div className="flex items-center gap-2">
                                         <CheckCircle2 className="w-5 h-5" />
-                                        {t.nav.empresas === "Business" ? "Sent Successfully" : "Enviado con éxito"}
+                                        {t.business.success_msg}
                                     </div>
                                 ) : (
                                     <>
@@ -277,7 +264,7 @@ Email de contacto: ${formData.email}
                                     animate={{ opacity: 1, x: 0 }}
                                     className="text-emerald-600 font-bold text-sm"
                                 >
-                                    {t.nav.empresas === "Business" ? "Thank you! We'll contact you soon." : "¡Gracias! Te contactaremos pronto."}
+                                    {t.business.success_msg}
                                 </motion.p>
                             )}
 
@@ -287,15 +274,14 @@ Email de contacto: ${formData.email}
                                     animate={{ opacity: 1, x: 0 }}
                                     className="text-red-500 font-bold text-sm"
                                 >
-                                    {t.nav.empresas === "Business" ? "Error sending. Please try again." : "Error al enviar. Inténtalo de nuevo."}
+                                    {t.business.error_msg}
                                 </motion.p>
                             )}
 
                             <p className="text-[10px] text-[var(--slate-400)] max-w-xs leading-tight text-center md:text-right">
-                                {t.nav.empresas === "Business"
-                                    ? "You will receive verified and documented success cases that match your profile."
-                                    : "Recibirás casos de éxito verificados y documentados que coincidan con tu perfil."}
+                                {t.business.footer_disclaimer}
                             </p>
+
                         </div>
                     </form>
                 </motion.div>

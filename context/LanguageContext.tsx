@@ -20,21 +20,19 @@ export function LanguageProvider({ children, initialLanguage }: LanguageProvider
     const [language, setLanguage] = useState<Language>(initialLanguage || "es");
 
     useEffect(() => {
-        // Priority:
-        // 1. Saved preference
-        // 2. Initial language (from server)
-        // 3. Browser language detection
         const savedLang = localStorage.getItem("language") as Language;
-        if (savedLang && (savedLang === "es" || savedLang === "en")) {
+        const validLanguages: Language[] = ["es", "en", "fr", "it", "de", "ja", "zh"];
+
+        if (savedLang && validLanguages.includes(savedLang)) {
             setLanguage(savedLang);
-        } else if (initialLanguage) {
+        } else if (initialLanguage && validLanguages.includes(initialLanguage)) {
             setLanguage(initialLanguage);
         } else {
-            const browserLang = navigator.language.split("-")[0];
-            if (browserLang === "es") {
-                setLanguage("es");
+            const browserLang = navigator.language.split("-")[0] as Language;
+            if (validLanguages.includes(browserLang)) {
+                setLanguage(browserLang);
             } else {
-                setLanguage("en");
+                setLanguage("es");
             }
         }
     }, [initialLanguage]);

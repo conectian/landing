@@ -101,85 +101,9 @@ Horizonte cierre: ${formData.closingHorizon}
         }
     };
 
+    const labels = t.partners;
     const isEn = language === "en";
 
-    const labels = isEn ? {
-        section_badge: "AI Partner Network",
-        title: "Document your success cases and access new clients",
-        subtitle: "We validate your use cases with real metrics so companies trust your proposal.",
-        process_title: "Verification Process",
-        case_title: "Verified Use Case #1",
-        step1: "1. Provider Profile",
-        step1_items: ["Business description", "Team", "Regions", "Sectors"],
-        step2: "2. Stacks & Cases",
-        step2_items: ["LLMs / RAG / MLOps", "ERP/CRM Integrations", "3 key cases", "Risks/limitations"],
-        step3: "3. Verified Metrics",
-        step3_items: ["Before vs After", "SLAs & adoption", "Payback", "Evidence/refs"],
-        step4: "4. Publication",
-        step4_items: ["Bronze/Silver/Gold level", "Verified summary", "Geo/sector/stack", "Sales contact"],
-        field_company: "Company Name",
-        field_region: "Primary Country / Region",
-        field_experience: "Team Years of Experience",
-        field_operating: "Operating Zones / Location",
-        field_stacks: "Core Tech Stacks",
-        field_integrations: "Integrations",
-        field_problem: "Problem (Business)",
-        field_sector: "Sector / Client Size",
-        field_systems: "Involved Systems",
-        field_metric1: "Metric 1 (before→after)",
-        field_metric2: "Metric 2 (%)",
-        field_time: "Time to Value",
-        field_payback: "Payback",
-        field_sla: "Signed SLA",
-        field_adoption: "Adoption",
-        field_evidence: "Evidence (link or description)",
-        field_level: "Proposed Level",
-        field_cost: "Project Cost Range",
-        field_closure: "Typical Closure",
-        field_email: "Your Contact Email",
-        btn_send: "Send for verification",
-        terms: "By sending you agree that CONECTIAN verifies the data provided for the proposed level.",
-        success: "Sent Successfully!",
-        error: "Error sending info."
-    } : {
-        section_badge: "Red de Partners IA",
-        title: "Documenta tus casos de éxito y accede a nuevos clientes",
-        subtitle: "Validamos tus casos de uso con métricas reales para que las empresas confíen en tu propuesta.",
-        process_title: "Proceso de Verificación",
-        case_title: "Caso de Uso Verificado #1",
-        step1: "1. Perfil del Proveedor",
-        step1_items: ["Descripción negocio", "Equipo", "Regiones", "Sectores"],
-        step2: "2. Stacks y Casos",
-        step2_items: ["LLMs / RAG / MLOps", "Integraciones ERP/CRM", "3 casos destacados", "Riesgos/limitaciones"],
-        step3: "3. Métricas Verificadas",
-        step3_items: ["Antes vs Después", "SLAs y adopción", "Payback", "Evidencias/refs"],
-        step4: "4. Publicación",
-        step4_items: ["Nivel Bronce/Plata/Oro", "Resumen verificado", "Geografía/sector/stack", "Contacto comercial"],
-        field_company: "Nombre de la empresa",
-        field_region: "País / Región principal",
-        field_experience: "Años de experiencia del equipo",
-        field_operating: "Zonas donde operáis / cercanía",
-        field_stacks: "Stacks principales",
-        field_integrations: "Integraciones",
-        field_problem: "Problema (negocio)",
-        field_sector: "Sector / tamaño cliente",
-        field_systems: "Sistemas implicados",
-        field_metric1: "Métrica 1 (antes→después)",
-        field_metric2: "Métrica 2 (%)",
-        field_time: "Tiempo a valor",
-        field_payback: "Payback",
-        field_sla: "SLA firmado",
-        field_adoption: "Adopción",
-        field_evidence: "Evidencias (enlace o descripción)",
-        field_level: "Nivel propuesto",
-        field_cost: "Rango coste proyecto",
-        field_closure: "Cierre habitual",
-        field_email: "Tu Email de contacto",
-        btn_send: "Enviar para verificación",
-        terms: "Al enviar aceptas que CONECTIAN verifique los datos proporcionados para el nivel propuesto.",
-        success: "¡Enviado con éxito!",
-        error: "Error al enviar."
-    };
 
     return (
         <section className="section-container">
@@ -242,7 +166,7 @@ Horizonte cierre: ${formData.closingHorizon}
                     <div>
                         <div className="flex items-center gap-3 mb-8">
                             <Building2 className="w-5 h-5 text-[var(--ai-primary)]" />
-                            <h3 className="text-xl font-bold uppercase tracking-tight">{labels.process_title}</h3>
+                            <h3 className="text-xl font-bold uppercase tracking-tight">{labels.form_title}</h3>
                         </div>
 
                         <div className="grid md:grid-cols-2 gap-6">
@@ -300,19 +224,22 @@ Horizonte cierre: ${formData.closingHorizon}
                             label={labels.field_level}
                             value={formData.verificationLevel}
                             onChange={v => setFormData({ ...formData, verificationLevel: v })}
-                            options={isEn ? ["Bronze", "Silver", "Gold"] : ["Bronce", "Plata", "Oro"]}
+                            options={labels.options_level}
+                            placeholder={labels.field_select_placeholder}
                         />
                         <FormSelect
                             label={labels.field_cost}
                             value={formData.projectCostRange}
                             onChange={v => setFormData({ ...formData, projectCostRange: v })}
                             options={["< 25k", "25-75k", "75-200k", "200-500k", "500k+"]}
+                            placeholder={labels.field_select_placeholder}
                         />
                         <FormSelect
                             label={labels.field_closure}
                             value={formData.closingHorizon}
                             onChange={v => setFormData({ ...formData, closingHorizon: v })}
-                            options={isEn ? ["2-4 weeks", "4-8 weeks", "8-12 weeks", "12+ weeks"] : ["2-4 semanas", "4-8 semanas", "8-12 semanas", "12+ semanas"]}
+                            options={labels.options_closure}
+                            placeholder={labels.field_select_placeholder}
                         />
                         <FormField
                             type="email"
@@ -352,7 +279,8 @@ Horizonte cierre: ${formData.closingHorizon}
                                     animate={{ opacity: 1, x: 0 }}
                                     className="text-emerald-600 font-bold text-sm hidden sm:block"
                                 >
-                                    {isEn ? "Thank you! We'll review your info." : "¡Gracias! Revisaremos tu información."}
+                                    {labels.thank_you}
+
                                 </motion.p>
                             )}
 
@@ -395,7 +323,7 @@ function FormField({ label, placeholder, value, onChange, type = "text", classNa
     );
 }
 
-function FormSelect({ label, value, onChange, options }: { label: string, value: string, onChange: (v: string) => void, options: string[] }) {
+function FormSelect({ label, value, onChange, options, placeholder }: { label: string, value: string, onChange: (v: string) => void, options: string[], placeholder?: string }) {
     return (
         <div>
             <label className="block text-[10px] font-black text-[var(--slate-500)] mb-2 uppercase tracking-wider">
@@ -407,7 +335,8 @@ function FormSelect({ label, value, onChange, options }: { label: string, value:
                 onChange={(e) => onChange(e.target.value)}
                 className="w-full px-4 py-3 rounded-xl border border-[var(--slate-200)] bg-white focus:outline-none focus:ring-2 focus:ring-[var(--ai-primary)]/20 focus:border-[var(--ai-primary)] transition-all text-sm font-medium"
             >
-                <option value="">Seleccionar...</option>
+                <option value="">{placeholder || "..."}</option>
+
                 {options.map(opt => <option key={opt} value={opt}>{opt}</option>)}
             </select>
         </div>

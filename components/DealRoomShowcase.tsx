@@ -34,7 +34,17 @@ interface DealRoomShowcaseProps {
     onOpenWhitelist: () => void;
 }
 
+import { useLanguage } from "@/context/LanguageContext";
+
 export default function DealRoomShowcase({ onOpenWhitelist }: DealRoomShowcaseProps) {
+    const { t } = useLanguage();
+
+    const stageIcons = [
+        <Rocket className="w-6 h-6 text-[var(--ai-primary)]" />,
+        <GraduationCap className="w-6 h-6 text-[var(--ai-primary)]" />,
+        <BarChart3 className="w-6 h-6 text-[var(--ai-primary)]" />,
+    ];
+
     return (
         <section id="empresas" className="section-container relative overflow-hidden">
             {/* Background Glow */}
@@ -48,7 +58,7 @@ export default function DealRoomShowcase({ onOpenWhitelist }: DealRoomShowcasePr
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        <span className="badge-ai">Para Empresas</span>
+                        <span className="badge-ai">{t.deal_room.badge}</span>
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -57,8 +67,8 @@ export default function DealRoomShowcase({ onOpenWhitelist }: DealRoomShowcasePr
                         transition={{ delay: 0.1 }}
                         className="text-3xl lg:text-5xl font-bold mb-6"
                     >
-                        Soluciones para <br />
-                        <span className="text-[var(--ai-primary)]">Clientes y Empresas</span>
+                        {t.deal_room.title_part1} <br />
+                        <span className="text-[var(--ai-primary)]">{t.deal_room.title_part2}</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -67,8 +77,7 @@ export default function DealRoomShowcase({ onOpenWhitelist }: DealRoomShowcasePr
                         transition={{ delay: 0.2 }}
                         className="text-lg text-[var(--slate-500)] mb-10 leading-relaxed"
                     >
-                        No te entregamos un software y nos vamos. Te acompañamos en todo el proceso de transformación
-                        para asegurar que la tecnología se traduce en impacto real en tu negocio.
+                        {t.deal_room.desc}
                     </motion.p>
 
                     <div className="space-y-6">
@@ -77,8 +86,8 @@ export default function DealRoomShowcase({ onOpenWhitelist }: DealRoomShowcasePr
                                 <CheckCircle2 className="w-6 h-6 text-[var(--ai-primary)]" />
                             </div>
                             <div>
-                                <h4 className="font-bold">Acompañamiento Estratégico</h4>
-                                <p className="text-sm text-[var(--slate-500)]">Sesiones periódicas para alinear la tecnología con tus objetivos de negocio.</p>
+                                <h4 className="font-bold">{t.deal_room.strategic_title}</h4>
+                                <p className="text-sm text-[var(--slate-500)]">{t.deal_room.strategic_desc}</p>
                             </div>
                         </div>
                         <div className="flex items-start gap-4 p-4 rounded-xl bg-white border border-[var(--slate-100)] shadow-sm">
@@ -86,8 +95,8 @@ export default function DealRoomShowcase({ onOpenWhitelist }: DealRoomShowcasePr
                                 <CheckCircle2 className="w-6 h-6 text-[var(--ai-primary)]" />
                             </div>
                             <div>
-                                <h4 className="font-bold">Seguridad Enterprise</h4>
-                                <p className="text-sm text-[var(--slate-500)]">Infraestructura blindada y cumplimiento normativo garantizado por contrato.</p>
+                                <h4 className="font-bold">{t.deal_room.security_title}</h4>
+                                <p className="text-sm text-[var(--slate-500)]">{t.deal_room.security_desc}</p>
                             </div>
                         </div>
                     </div>
@@ -103,7 +112,7 @@ export default function DealRoomShowcase({ onOpenWhitelist }: DealRoomShowcasePr
                             onClick={onOpenWhitelist}
                             className="btn-ai btn-ai-primary"
                         >
-                            Agendar una Demo del Programa
+                            {t.deal_room.btn}
                             <ArrowRight className="w-4 h-4" />
                         </button>
                     </motion.div>
@@ -114,9 +123,9 @@ export default function DealRoomShowcase({ onOpenWhitelist }: DealRoomShowcasePr
                     <div className="absolute left-[31px] top-8 bottom-8 w-px bg-gradient-to-b from-[var(--ai-primary)] to-transparent hidden md:block" />
 
                     <div className="space-y-12">
-                        {adoptionStages.map((stage, index) => (
+                        {t.deal_room.stages.map((stage: any, index: number) => (
                             <motion.div
-                                key={stage.id}
+                                key={index}
                                 initial={{ opacity: 0, x: 20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
@@ -129,7 +138,7 @@ export default function DealRoomShowcase({ onOpenWhitelist }: DealRoomShowcasePr
                                 <div className="card-ai group hover:bg-[var(--ai-glow)]/30">
                                     <div className="flex items-center justify-between mb-4">
                                         <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center">
-                                            {stage.icon}
+                                            {stageIcons[index]}
                                         </div>
                                         <span className="text-xs font-bold px-3 py-1 rounded-full bg-[var(--slate-100)] text-[var(--slate-600)]">
                                             {stage.duration}
@@ -137,10 +146,10 @@ export default function DealRoomShowcase({ onOpenWhitelist }: DealRoomShowcasePr
                                     </div>
                                     <h3 className="text-xl font-bold mb-3">{stage.title}</h3>
                                     <p className="text-[var(--slate-500)] text-sm mb-6 leading-relaxed">
-                                        {stage.description}
+                                        {stage.desc}
                                     </p>
                                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                                        {stage.items.map(item => (
+                                        {stage.items.map((item: string) => (
                                             <li key={item} className="flex items-center gap-2 text-xs font-medium text-[var(--slate-600)]">
                                                 <div className="w-1 h-1 rounded-full bg-[var(--ai-primary)]" />
                                                 {item}

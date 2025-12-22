@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { UserCheck, Zap, BarChart, Globe, ArrowRight, Shield } from "lucide-react";
+import Link from "next/link";
 
 const steps = [
     {
@@ -34,14 +35,25 @@ const steps = [
     }
 ];
 
+import { useLanguage } from "@/context/LanguageContext";
+
 interface PartnersSectionProps {
     onOpenWhitelist: () => void;
 }
 
 export default function PartnersSection({ onOpenWhitelist }: PartnersSectionProps) {
+    const { t, language } = useLanguage();
+
+    const stepsIcons = [
+        <UserCheck className="w-6 h-6 text-purple-600" />,
+        <Zap className="w-6 h-6 text-purple-600" />,
+        <BarChart className="w-6 h-6 text-purple-600" />,
+        <Globe className="w-6 h-6 text-purple-600" />
+    ];
+
     return (
         <section id="partners" className="section-container bg-white border-t border-[var(--slate-100)] relative overflow-hidden">
-            {/* Subtle Gradient background for Partners section to differentiate slightly */}
+            {/* Subtle Gradient background */}
             <div className="absolute -top-24 -right-24 w-96 h-96 bg-purple-500/5 blur-[100px] rounded-full -z-10" />
             <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-indigo-500/5 blur-[100px] rounded-full -z-10" />
 
@@ -53,7 +65,7 @@ export default function PartnersSection({ onOpenWhitelist }: PartnersSectionProp
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        <span className="badge-ai bg-purple-50 text-purple-700 border-purple-100">Para Partners</span>
+                        <span className="badge-ai !bg-purple-50 !text-purple-700 !border-purple-100">{t.partners.section_badge}</span>
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -62,7 +74,7 @@ export default function PartnersSection({ onOpenWhitelist }: PartnersSectionProp
                         transition={{ delay: 0.1 }}
                         className="text-3xl lg:text-5xl font-bold mb-6"
                     >
-                        Portal para <span className="text-purple-600">Proveedores de IA</span>
+                        {t.partners.section_title_part1} <span className="text-purple-600">{t.partners.section_title_part2}</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -71,21 +83,21 @@ export default function PartnersSection({ onOpenWhitelist }: PartnersSectionProp
                         transition={{ delay: 0.2 }}
                         className="text-lg text-[var(--slate-500)] mb-10 leading-relaxed"
                     >
-                        Validamos tus casos de uso con métricas reales. Publicamos un resumen verificado para que las empresas confíen en tu propuesta y aceleren su decisión.
+                        {t.partners.section_desc}
                     </motion.p>
 
                     <div className="space-y-4 mb-10">
                         <div className="flex items-center gap-4 text-[var(--slate-600)] font-medium">
                             <Shield className="w-5 h-5 text-purple-500" />
-                            <span>Sello de Confianza Conectian</span>
+                            <span>{t.partners.trust_seal}</span>
                         </div>
                         <div className="flex items-center gap-4 text-[var(--slate-600)] font-medium">
                             <Shield className="w-5 h-5 text-purple-500" />
-                            <span>Acceso a Clientes Enterprise</span>
+                            <span>{t.partners.enterprise_access}</span>
                         </div>
                         <div className="flex items-center gap-4 text-[var(--slate-600)] font-medium">
                             <Shield className="w-5 h-5 text-purple-500" />
-                            <span>Generación de Leads Cualificados</span>
+                            <span>{t.partners.lead_gen}</span>
                         </div>
                     </div>
 
@@ -95,22 +107,22 @@ export default function PartnersSection({ onOpenWhitelist }: PartnersSectionProp
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 }}
                     >
-                        <button
-                            onClick={onOpenWhitelist}
-                            className="btn-ai bg-purple-600 text-white hover:bg-purple-700 shadow-purple-200"
+                        <Link
+                            href="/partners"
+                            className="btn-ai bg-purple-600 text-white hover:bg-purple-700 shadow-purple-200 inline-flex items-center gap-2"
                         >
-                            Unirse como Partner
-                            <ArrowRight className="w-4 h-4" />
-                        </button>
+                            {t.partners.btn_join}
+                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </Link>
                     </motion.div>
                 </div>
 
                 {/* Right side: Steps Flow */}
                 <div className="lg:col-span-7">
                     <div className="space-y-6">
-                        {steps.map((step, index) => (
+                        {t.partners.steps.map((step: any, index: number) => (
                             <motion.div
-                                key={step.id}
+                                key={index}
                                 initial={{ opacity: 0, x: 20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
@@ -119,13 +131,13 @@ export default function PartnersSection({ onOpenWhitelist }: PartnersSectionProp
                             >
                                 <div className="flex flex-col md:flex-row gap-6 items-start">
                                     <div className="w-14 h-14 rounded-2xl bg-purple-50 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-500">
-                                        {step.icon}
+                                        {stepsIcons[index]}
                                     </div>
                                     <div className="flex-1">
                                         <div className="flex items-center justify-between mb-2">
-                                            <span className="text-xs font-black text-purple-300 uppercase tracking-widest">Paso {index + 1}</span>
+                                            <span className="text-xs font-black text-purple-300 uppercase tracking-widest">{language === "es" ? "Paso" : "Step"} {index + 1}</span>
                                             <div className="flex gap-2">
-                                                {step.tags.map(tag => (
+                                                {step.tags.map((tag: string) => (
                                                     <span key={tag} className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[var(--slate-50)] text-[var(--slate-400)]">
                                                         {tag}
                                                     </span>
@@ -136,7 +148,7 @@ export default function PartnersSection({ onOpenWhitelist }: PartnersSectionProp
                                             {step.title}
                                         </h3>
                                         <p className="text-[var(--slate-500)] text-sm leading-relaxed">
-                                            {step.description}
+                                            {step.desc}
                                         </p>
                                     </div>
                                 </div>

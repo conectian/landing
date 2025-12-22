@@ -22,8 +22,8 @@ export default function Home() {
       <Header onOpenWhitelist={openWhitelist} />
       <main>
         <Hero onOpenWhitelist={openWhitelist} />
-        <UseCasesGrid onOpenWhitelist={openWhitelist} />
         <ValueProposition />
+        <UseCasesGrid onOpenWhitelist={openWhitelist} />
         <DealRoomShowcase onOpenWhitelist={openWhitelist} />
         <PartnersSection onOpenWhitelist={openWhitelist} />
         <FAQSection onOpenWhitelist={openWhitelist} />

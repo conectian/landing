@@ -24,7 +24,17 @@ const methodSteps = [
     },
 ];
 
+import { useLanguage } from "@/context/LanguageContext";
+
 export default function ValueProposition() {
+    const { t } = useLanguage();
+
+    const icons = [
+        <Headphones className="w-8 h-8 text-[var(--ai-primary)]" />,
+        <CheckCircle2 className="w-8 h-8 text-[var(--ai-primary)]" />,
+        <ShieldCheck className="w-8 h-8 text-[var(--ai-primary)]" />,
+    ];
+
     return (
         <section id="nosotros" className="section-container bg-white overflow-hidden">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -35,7 +45,7 @@ export default function ValueProposition() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        <span className="badge-ai">Nuestro Método</span>
+                        <span className="badge-ai">{t.value_prop.badge}</span>
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -44,8 +54,8 @@ export default function ValueProposition() {
                         transition={{ delay: 0.1 }}
                         className="text-3xl lg:text-5xl font-bold mb-6"
                     >
-                        Aplicamos lo que <br />
-                        <span className="text-[var(--ai-primary)]">ya funciona</span>
+                        {t.value_prop.title_part1} <br />
+                        <span className="text-[var(--ai-primary)]">{t.value_prop.title_part2}</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -54,8 +64,7 @@ export default function ValueProposition() {
                         transition={{ delay: 0.2 }}
                         className="text-lg text-[var(--slate-500)] mb-10 leading-relaxed"
                     >
-                        Nuestra metodología está diseñada para eliminar el riesgo de la adopción de IA.
-                        Nos enfocamos en resultados tangibles y medibles que impactan directamente en tu cuenta de resultados.
+                        {t.value_prop.desc}
                     </motion.p>
 
                     <motion.div
@@ -69,19 +78,19 @@ export default function ValueProposition() {
                             <div className="w-10 h-10 rounded-full bg-[var(--ai-primary)] text-white flex items-center justify-center font-bold">
                                 %
                             </div>
-                            <h4 className="text-xl font-bold">Modelo 'Pay per Results'</h4>
+                            <h4 className="text-xl font-bold">{t.value_prop.pay_per_results_title}</h4>
                         </div>
                         <p className="text-[var(--slate-600)]">
-                            Somos los únicos que vinculamos el pago de la implementación a la consecución de las métricas de retorno de inversión (ROI) acordadas.
+                            {t.value_prop.pay_per_results_desc}
                         </p>
                     </motion.div>
                 </div>
 
                 {/* Right Side - Steps */}
                 <div className="space-y-6">
-                    {methodSteps.map((step, index) => (
+                    {t.value_prop.steps.map((step: any, index: number) => (
                         <motion.div
-                            key={step.number}
+                            key={index}
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
@@ -89,16 +98,16 @@ export default function ValueProposition() {
                             className="card-ai group relative overflow-hidden"
                         >
                             <div className="absolute top-4 right-6 text-5xl font-black text-[var(--slate-100)] group-hover:text-[var(--ai-glow)] transition-colors">
-                                {step.number}
+                                {`0${index + 1}`}
                             </div>
                             <div className="flex gap-6 relative z-10">
                                 <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-white shadow-sm border border-[var(--slate-100)] flex items-center justify-center">
-                                    {step.icon}
+                                    {icons[index]}
                                 </div>
                                 <div>
                                     <h3 className="text-xl font-bold mb-2">{step.title}</h3>
                                     <p className="text-[var(--slate-500)] leading-relaxed">
-                                        {step.description}
+                                        {step.desc}
                                     </p>
                                 </div>
                             </div>

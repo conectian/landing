@@ -27,7 +27,10 @@ interface FAQSectionProps {
     onOpenWhitelist: () => void;
 }
 
+import { useLanguage } from "@/context/LanguageContext";
+
 export default function FAQSection({ onOpenWhitelist }: FAQSectionProps) {
+    const { t } = useLanguage();
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
@@ -39,12 +42,12 @@ export default function FAQSection({ onOpenWhitelist }: FAQSectionProps) {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <span className="badge-ai mb-4">Preguntas Frecuentes</span>
-                    <h2 className="text-3xl lg:text-4xl font-bold text-[var(--slate-900)]">Todo lo que necesitas <br /> saber sobre <span className="text-[var(--ai-primary)]">Conectian</span></h2>
+                    <span className="badge-ai mb-4">{t.faq.badge}</span>
+                    <h2 className="text-3xl lg:text-4xl font-bold text-[var(--slate-900)]">{t.faq.title_part1} <br /> {t.faq.title_part2}</h2>
                 </motion.div>
 
                 <div className="space-y-4">
-                    {faqs.map((faq, index) => (
+                    {t.faq.questions.map((faq: any, index: number) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 10 }}
@@ -57,7 +60,7 @@ export default function FAQSection({ onOpenWhitelist }: FAQSectionProps) {
                                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                                 className="w-full flex items-center justify-between p-6 text-left focus:outline-none bg-white hover:bg-[var(--slate-50)] transition-colors"
                             >
-                                <span className="text-lg font-bold text-[var(--slate-900)] leading-tight">{faq.question}</span>
+                                <span className="text-lg font-bold text-[var(--slate-900)] leading-tight">{faq.q}</span>
                                 <div className={`w-6 h-6 rounded-full flex items-center justify-center transition-all ${openIndex === index ? 'bg-[var(--ai-primary)] text-white rotate-180' : 'bg-[var(--slate-100)] text-[var(--slate-600)]'}`}>
                                     {openIndex === index ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                                 </div>
@@ -68,7 +71,7 @@ export default function FAQSection({ onOpenWhitelist }: FAQSectionProps) {
                                 className="overflow-hidden"
                             >
                                 <div className="p-6 pt-0 text-[var(--slate-500)] leading-relaxed text-base border-t border-[var(--slate-50)]">
-                                    {faq.answer}
+                                    {faq.a}
                                 </div>
                             </motion.div>
                         </motion.div>
@@ -82,13 +85,13 @@ export default function FAQSection({ onOpenWhitelist }: FAQSectionProps) {
                     transition={{ delay: 0.5 }}
                     className="mt-16 p-8 rounded-3xl bg-[var(--ai-glow)] border border-[var(--ai-primary)]/10 text-center"
                 >
-                    <h3 className="text-xl font-bold mb-3">¿Tienes más preguntas?</h3>
-                    <p className="text-[var(--slate-500)] mb-6">Estamos aquí para ayudarte a entender cómo la IA puede transformar tu negocio.</p>
+                    <h3 className="text-xl font-bold mb-3">{t.faq.footer_title}</h3>
+                    <p className="text-[var(--slate-500)] mb-6">{t.faq.footer_desc}</p>
                     <button
                         onClick={onOpenWhitelist}
                         className="btn-ai btn-ai-primary"
                     >
-                        Contactar con Soporte
+                        {t.faq.footer_btn}
                     </button>
                 </motion.div>
             </div>

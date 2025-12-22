@@ -1,22 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
-
-const navLinks = [
-    { name: "Casos de Éxito", href: "/#soluciones" },
-    { name: "IA para Clientes", href: "/#empresas" },
-    { name: "Red de Partners", href: "/#partners" },
-    { name: "Preguntas Frecuentes", href: "/#faq" },
-];
+import { Menu, X, Globe } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface HeaderProps {
     onOpenWhitelist: () => void;
 }
 
 export default function Header({ onOpenWhitelist }: HeaderProps) {
+    const { language, setLanguage, t } = useLanguage();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+
+    const navLinks = [
+        { name: t.nav.casos, href: "/#soluciones" },
+        { name: t.nav.metodo, href: "/#nosotros" },
+        { name: t.nav.partners, href: "/#partners" },
+        { name: t.nav.faq, href: "/#faq" },
+    ];
 
     useEffect(() => {
         const handleScroll = () => {
@@ -25,6 +27,10 @@ export default function Header({ onOpenWhitelist }: HeaderProps) {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    const toggleLanguage = () => {
+        setLanguage(language === "es" ? "en" : "es");
+    };
 
     return (
         <header
@@ -59,12 +65,34 @@ export default function Header({ onOpenWhitelist }: HeaderProps) {
                     </div>
 
                     {/* Desktop CTAs */}
-                    <div className="hidden lg:flex items-center gap-4">
+                    <div className="hidden lg:flex items-center gap-3">
+                        {/* Language Toggle */}
+                        <button
+                            onClick={toggleLanguage}
+                            className="p-2 mr-2 rounded-full border border-[var(--slate-200)] text-[var(--slate-600)] hover:text-[var(--ai-primary)] hover:border-[var(--ai-primary)] transition-all flex items-center gap-2"
+                            title={language === "es" ? "Switch to English" : "Cambiar a Español"}
+                        >
+                            <Globe size={18} />
+                            <span className="text-xs font-bold uppercase">{language}</span>
+                        </button>
+
+                        <Link
+                            href="/business"
+                            className="px-4 py-2 rounded-full text-sm font-medium border border-[var(--slate-200)] hover:border-[var(--ai-primary)] hover:bg-[var(--ai-glow)] transition-all"
+                        >
+                            {t.nav.empresas}
+                        </Link>
+                        <Link
+                            href="/partners"
+                            className="px-4 py-2 rounded-full text-sm font-medium border border-[var(--slate-200)] hover:border-[var(--ai-primary)] hover:bg-[var(--ai-glow)] transition-all"
+                        >
+                            {t.nav.partners}
+                        </Link>
                         <button
                             onClick={onOpenWhitelist}
-                            className="btn-ai btn-ai-primary !py-2.5 !px-6 text-sm"
+                            className="btn-ai btn-ai-primary !py-2.5 !px-6 text-sm ml-2"
                         >
-                            Empezar ahora
+                            {t.nav.cta}
                         </button>
                     </div>
 
@@ -93,17 +121,34 @@ export default function Header({ onOpenWhitelist }: HeaderProps) {
                                 </Link>
                             ))}
                             <div className="flex flex-col gap-3 pt-6 border-t border-[var(--slate-200)]">
-                                <button
-                                    onClick={() => { onOpenWhitelist(); setMobileMenuOpen(false); }}
-                                    className="btn-ai btn-ai-secondary w-full"
+                                <Link
+                                    href="/business"
+                                    className="btn-ai btn-ai-secondary w-full text-center"
+                                    onClick={() => setMobileMenuOpen(false)}
                                 >
-                                    Acceso Clientes
-                                </button>
+                                    {t.nav.empresas}
+                                </Link>
+                                <Link
+                                    href="/partners"
+                                    className="btn-ai btn-ai-secondary w-full text-center"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                >
+                                    {t.nav.partners}
+                                </Link>
                                 <button
                                     onClick={() => { onOpenWhitelist(); setMobileMenuOpen(false); }}
                                     className="btn-ai btn-ai-primary w-full"
                                 >
-                                    Hablar con un experto
+                                    {t.nav.cta}
+                                </button>
+
+                                {/* Mobile Language Toggle */}
+                                <button
+                                    onClick={() => { toggleLanguage(); setMobileMenuOpen(false); }}
+                                    className="mt-4 flex items-center justify-center gap-2 p-3 rounded-xl border border-[var(--slate-200)] text-[var(--slate-900)] font-bold uppercase transition-all"
+                                >
+                                    <Globe size={18} />
+                                    {language === "es" ? "English" : "Español"}
                                 </button>
                             </div>
                         </div>

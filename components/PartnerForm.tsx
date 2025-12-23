@@ -37,68 +37,9 @@ export default function PartnerForm({ onOpenWhitelist }: PartnerFormProps) {
     });
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        setLoading(true);
-        setStatus('loading');
-
-        const templateParams = {
-            name: "Nueva Solicitud de Partner",
-            email: formData.email,
-            message: `
---- Perfil del Proveedor ---
-Empresa: ${formData.companyName}
-Región: ${formData.region}
-Experiencia: ${formData.experience}
-Zonas: ${formData.operatingZones}
-Stacks: ${formData.mainStacks}
-Integraciones: ${formData.integrations}
-Email: ${formData.email}
-
---- Caso de Uso Verificado #1 ---
-Problema: ${formData.caseProblem}
-Sector/Tamaño: ${formData.caseSector}
-Sistemas: ${formData.caseSystems}
-Métrica 1: ${formData.caseMetric1}
-Métrica 2: ${formData.caseMetric2}
-Tiempo a valor: ${formData.caseTimeToValue}
-Payback: ${formData.casePayback}
-SLA: ${formData.caseSLA}
-Adopción: ${formData.caseAdoption}
-Evidencias: ${formData.caseEvidences}
-
---- Clasificación ---
-Nivel propuesto: ${formData.verificationLevel}
-Rango coste: ${formData.projectCostRange}
-Horizonte cierre: ${formData.closingHorizon}
-            `,
-            time: new Date().toLocaleString(),
-            title: "Nueva solicitud de Partner AI",
-        };
-
-        try {
-            await emailjs.send(
-                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
-                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
-                templateParams,
-                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ""
-            );
-            setStatus('success');
-            setFormData({
-                companyName: "", region: "", experience: "", operatingZones: "",
-                mainStacks: "", integrations: "", caseProblem: "", caseSector: "",
-                caseSystems: "", caseMetric1: "", caseMetric2: "", caseTimeToValue: "",
-                casePayback: "", caseSLA: "", caseAdoption: "", caseEvidences: "",
-                verificationLevel: "Bronce", projectCostRange: "25-75k", closingHorizon: "4-8 semanas", email: ""
-            });
-            setTimeout(() => setStatus('idle'), 5000);
-        } catch (error) {
-            console.error("Error sending email:", error);
-            setStatus('error');
-            setTimeout(() => setStatus('idle'), 5000);
-        } finally {
-            setLoading(false);
-        }
+        onOpenWhitelist?.();
     };
 
     const labels = t.partners;
@@ -159,12 +100,7 @@ Horizonte cierre: ${formData.closingHorizon}
                     </div>
                 </div>
 
-                {/* Progress Bar when loading */}
-                {status === 'loading' && (
-                    <div className="absolute top-0 left-0 h-1 bg-[var(--ai-primary)] animate-shimmer w-full" />
-                )}
-
-                <form onSubmit={handleSubmit} className="space-y-10">
+                <form className="space-y-10 relative">
                     {/* Section: Company Profile */}
                     <div>
                         <div className="flex items-center gap-3 mb-8">
@@ -212,11 +148,11 @@ Horizonte cierre: ${formData.closingHorizon}
                                 {labels.field_evidence}
                             </label>
                             <textarea
-                                required
+                                disabled
                                 value={formData.caseEvidences}
                                 onChange={(e) => setFormData({ ...formData, caseEvidences: e.target.value })}
                                 placeholder="Dashboard anon., carta del cliente, contrato con hitos (redactado)"
-                                className="w-full px-4 py-3 rounded-xl border border-[var(--slate-200)] bg-white focus:outline-none focus:ring-2 focus:ring-[var(--ai-primary)]/20 focus:border-[var(--ai-primary)] transition-all min-h-[120px]"
+                                className="w-full px-4 py-3 rounded-xl border border-[var(--slate-200)] bg-white opacity-60 focus:outline-none transition-all min-h-[120px]"
                             />
                         </div>
                     </div>
@@ -254,26 +190,15 @@ Horizonte cierre: ${formData.closingHorizon}
                     </div>
 
                     {/* Submit Button & Status */}
-                    <div className="flex flex-col sm:flex-row items-center gap-6 pt-4 border-t border-[var(--slate-100)]">
+                    <div className="flex flex-col sm:flex-row items-center gap-6 pt-4 border-t border-[var(--slate-100)] relative z-40">
                         <div className="flex items-center gap-4">
                             <button
-                                type="submit"
-                                disabled={loading || status === 'success'}
-                                className={`btn-ai group px-10 w-full sm:w-auto ${status === 'success' ? 'bg-emerald-500 text-white border-emerald-500' : 'btn-ai-primary'}`}
+                                type="button"
+                                onClick={onOpenWhitelist}
+                                className="btn-ai btn-ai-primary group px-10 w-full sm:w-auto"
                             >
-                                {status === 'loading' ? (
-                                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                                ) : status === 'success' ? (
-                                    <div className="flex items-center gap-2">
-                                        <CheckCircle2 className="w-5 h-5" />
-                                        {labels.success}
-                                    </div>
-                                ) : (
-                                    <>
-                                        {labels.btn_send}
-                                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                                    </>
-                                )}
+                                {labels.btn_send}
+                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </button>
 
                             {status === 'success' && (
@@ -356,11 +281,11 @@ function FormField({ label, placeholder, value, onChange, type = "text", classNa
             </label>
             <input
                 type={type}
-                required
+                disabled
                 value={value}
                 onChange={(e) => onChange(e.target.value)}
                 placeholder={placeholder}
-                className="w-full px-4 py-3 rounded-xl border border-[var(--slate-200)] bg-white focus:outline-none focus:ring-2 focus:ring-[var(--ai-primary)]/20 focus:border-[var(--ai-primary)] transition-all italic text-sm"
+                className="w-full px-4 py-3 rounded-xl border border-[var(--slate-200)] bg-white opacity-60 focus:outline-none transition-all italic text-sm"
             />
         </div>
     );
@@ -373,10 +298,10 @@ function FormSelect({ label, value, onChange, options, placeholder }: { label: s
                 {label}
             </label>
             <select
-                required
+                disabled
                 value={value}
                 onChange={(e) => onChange(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl border border-[var(--slate-200)] bg-white focus:outline-none focus:ring-2 focus:ring-[var(--ai-primary)]/20 focus:border-[var(--ai-primary)] transition-all text-sm font-medium"
+                className="w-full px-4 py-3 rounded-xl border border-[var(--slate-200)] bg-white opacity-60 focus:outline-none transition-all text-sm font-medium"
             >
                 <option value="">{placeholder || "..."}</option>
 

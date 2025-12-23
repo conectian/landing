@@ -50,6 +50,7 @@ export default function Hero({ onOpenWhitelist }: HeroProps) {
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     {/* Left Column - Content */}
                     <div className="text-left max-w-2xl">
+
                         <motion.h1
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -91,23 +92,6 @@ export default function Hero({ onOpenWhitelist }: HeroProps) {
                                 {t.hero.btn_consult}
                             </button>
                         </motion.div>
-
-                        {/* Trust Signals */}
-                        {/* <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ delay: 0.4 }}
-                            className="flex flex-wrap gap-8"
-                        >
-                            <div className="flex items-center gap-2 text-sm font-medium text-[var(--slate-600)]">
-                                <Heart className="w-4 h-4 text-pink-500" />
-                                <span>Solo soluciones probadas</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-sm font-medium text-[var(--slate-600)]">
-                                <Zap className="w-4 h-4 text-amber-500" />
-                                <span>Pago por resultados</span>
-                            </div>
-                        </motion.div> */}
                     </div>
 
                     {/* Right Column - Visual Card */}
@@ -206,45 +190,29 @@ export default function Hero({ onOpenWhitelist }: HeroProps) {
                 </div>
             </div>
 
-            {/* Trust Banner Marquee */}
-            {/* <div className="absolute bottom-8 left-0 right-0 z-20">
-                <div className="max-w-[100vw] overflow-hidden">
+            {/* Trust Bar - Clean & Integrated */}
+            <div className="absolute bottom-0 left-0 right-0 z-20 pb-12 hidden md:block">
+                <div className="section-container !py-0">
                     <motion.div
                         initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1 }}
-                        className="relative flex items-center"
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.5 }}
+                        className="flex items-center justify-center gap-12 pt-8"
                     >
-                        <motion.div
-                            animate={{ x: ["0%", "-50%"] }}
-                            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                            className="flex whitespace-nowrap gap-6 pr-6 w-max items-center"
-                        >
-                            {[...t.hero.trust_bar, ...t.hero.trust_bar, ...t.hero.trust_bar, ...t.hero.trust_bar].map((text, i) => {
-                                // Color rotation based on index
-                                const colors = [
-                                    "bg-purple-50 text-purple-600 border-purple-100",
-                                    "bg-emerald-50 text-emerald-600 border-emerald-100",
-                                    "bg-blue-50 text-blue-600 border-blue-100"
-                                ];
-                                const colorClass = colors[i % colors.length];
-
-                                return (
-                                    <div
-                                        key={i}
-                                        className={`flex items-center gap-2 px-6 py-1 rounded-full border shadow-sm backdrop-blur-sm ${colorClass}`}
-                                    >
-                                        <div className="w-1.5 h-1.5 rounded-full bg-current opacity-60 animate-pulse" />
-                                        <span className="text-[9px] font-black uppercase tracking-[0.15em]">
-                                            {text}
-                                        </span>
-                                    </div>
-                                );
-                            })}
-                        </motion.div>
+                        {t.hero.trust_bar.map((text, i) => (
+                            <div key={i} className="flex items-center gap-3 group">
+                                <div className="w-5 h-5 rounded-full bg-[var(--ai-glow)] flex items-center justify-center border border-[var(--ai-primary)]/10">
+                                    <ShieldCheck className="w-3 h-3 text-[var(--ai-primary)]" />
+                                </div>
+                                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[var(--slate-500)] group-hover:text-[var(--ai-primary)] transition-colors">
+                                    {text}
+                                </span>
+                            </div>
+                        ))}
                     </motion.div>
                 </div>
-            </div> */}
+            </div>
 
             {/* Visual element at the bottom - subtle overlay */}
             <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white via-white/80 to-transparent z-10 pointer-events-none" />

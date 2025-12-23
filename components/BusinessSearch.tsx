@@ -26,55 +26,9 @@ export default function BusinessSearch({ onOpenWhitelist }: BusinessSearchProps)
     });
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        setLoading(true);
-        setStatus('loading');
-
-        const templateParams = {
-            name: "Búsqueda de Caso de Éxito",
-            email: formData.email,
-            message: `
-Sector: ${formData.sector}
-Tamaño empresa: ${formData.companySize}
-Ubicación: ${formData.location}
-Problema principal: ${formData.problem}
-Objetivo: ${formData.objective}
-Plazo esperado: ${formData.timeframe}
-Prioridad: ${formData.priority}
-Email de contacto: ${formData.email}
-            `,
-            time: new Date().toLocaleString(),
-            title: "Nueva búsqueda de caso de éxito",
-        };
-
-        try {
-            await emailjs.send(
-                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
-                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
-                templateParams,
-                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ""
-            );
-            setStatus('success');
-            setFormData({
-                sector: "",
-                companySize: "",
-                location: "",
-                problem: "",
-                objective: "",
-                timeframe: "",
-                priority: "",
-                email: ""
-            });
-            // Reset success after 5 seconds
-            setTimeout(() => setStatus('idle'), 5000);
-        } catch (error) {
-            console.error("Error sending email:", error);
-            setStatus('error');
-            setTimeout(() => setStatus('idle'), 5000);
-        } finally {
-            setLoading(false);
-        }
+        onOpenWhitelist();
     };
 
     const objectives = t.business.objective_options;
@@ -109,12 +63,7 @@ Email de contacto: ${formData.email}
                     transition={{ delay: 0.2 }}
                     className="p-8 md:p-12 rounded-[2.5rem] bg-white border border-[var(--slate-200)] shadow-xl relative overflow-hidden"
                 >
-                    {/* Progress Bar when loading */}
-                    {status === 'loading' && (
-                        <div className="absolute top-0 left-0 h-1 bg-[var(--ai-primary)] animate-shimmer w-full" />
-                    )}
-
-                    <form onSubmit={handleSubmit} className="space-y-8">
+                    <form className="space-y-8 relative">
                         {/* Row 1 */}
                         <div className="grid md:grid-cols-4 gap-4">
                             <div>
@@ -123,11 +72,11 @@ Email de contacto: ${formData.email}
                                 </label>
                                 <input
                                     type="text"
-                                    required
+                                    disabled
                                     value={formData.sector}
                                     onChange={(e) => setFormData({ ...formData, sector: e.target.value })}
                                     placeholder={t.business.fields.sector_placeholder}
-                                    className="w-full px-4 py-3 rounded-xl border border-[var(--slate-200)] bg-white focus:outline-none focus:ring-2 focus:ring-[var(--ai-primary)]/20 focus:border-[var(--ai-primary)] transition-all"
+                                    className="w-full px-4 py-3 rounded-xl border border-[var(--slate-200)] bg-white opacity-60 focus:outline-none transition-all"
                                 />
                             </div>
 
@@ -137,11 +86,11 @@ Email de contacto: ${formData.email}
                                 </label>
                                 <input
                                     type="text"
-                                    required
+                                    disabled
                                     value={formData.companySize}
                                     onChange={(e) => setFormData({ ...formData, companySize: e.target.value })}
                                     placeholder={t.business.fields.size_placeholder}
-                                    className="w-full px-4 py-3 rounded-xl border border-[var(--slate-200)] bg-white focus:outline-none focus:ring-2 focus:ring-[var(--ai-primary)]/20 focus:border-[var(--ai-primary)] transition-all"
+                                    className="w-full px-4 py-3 rounded-xl border border-[var(--slate-200)] bg-white opacity-60 focus:outline-none transition-all"
                                 />
                             </div>
 
@@ -151,11 +100,11 @@ Email de contacto: ${formData.email}
                                 </label>
                                 <input
                                     type="text"
-                                    required
+                                    disabled
                                     value={formData.location}
                                     onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                                     placeholder={t.business.fields.location_placeholder}
-                                    className="w-full px-4 py-3 rounded-xl border border-[var(--slate-200)] bg-white focus:outline-none focus:ring-2 focus:ring-[var(--ai-primary)]/20 focus:border-[var(--ai-primary)] transition-all"
+                                    className="w-full px-4 py-3 rounded-xl border border-[var(--slate-200)] bg-white opacity-60 focus:outline-none transition-all"
                                 />
                             </div>
 
@@ -165,11 +114,11 @@ Email de contacto: ${formData.email}
                                 </label>
                                 <input
                                     type="text"
-                                    required
+                                    disabled
                                     value={formData.problem}
                                     onChange={(e) => setFormData({ ...formData, problem: e.target.value })}
                                     placeholder={t.business.fields.problem_placeholder}
-                                    className="w-full px-4 py-3 rounded-xl border border-[var(--slate-200)] bg-white focus:outline-none focus:ring-2 focus:ring-[var(--ai-primary)]/20 focus:border-[var(--ai-primary)] transition-all"
+                                    className="w-full px-4 py-3 rounded-xl border border-[var(--slate-200)] bg-white opacity-60 focus:outline-none transition-all"
                                 />
                             </div>
                         </div>
@@ -181,10 +130,10 @@ Email de contacto: ${formData.email}
                                     {t.business.fields.objective}
                                 </label>
                                 <select
-                                    required
+                                    disabled
                                     value={formData.objective}
                                     onChange={(e) => setFormData({ ...formData, objective: e.target.value })}
-                                    className="w-full px-4 py-3 rounded-xl border border-[var(--slate-200)] bg-white focus:outline-none focus:ring-2 focus:ring-[var(--ai-primary)]/20 focus:border-[var(--ai-primary)] transition-all"
+                                    className="w-full px-4 py-3 rounded-xl border border-[var(--slate-200)] bg-white opacity-60 focus:outline-none transition-all"
                                 >
                                     <option value="">{t.business.fields.objective_placeholder}</option>
                                     {objectives.map(opt => <option key={opt} value={opt}>{opt}</option>)}
@@ -196,10 +145,10 @@ Email de contacto: ${formData.email}
                                     {t.business.fields.timeline}
                                 </label>
                                 <select
-                                    required
+                                    disabled
                                     value={formData.timeframe}
                                     onChange={(e) => setFormData({ ...formData, timeframe: e.target.value })}
-                                    className="w-full px-4 py-3 rounded-xl border border-[var(--slate-200)] bg-white focus:outline-none focus:ring-2 focus:ring-[var(--ai-primary)]/20 focus:border-[var(--ai-primary)] transition-all"
+                                    className="w-full px-4 py-3 rounded-xl border border-[var(--slate-200)] bg-white opacity-60 focus:outline-none transition-all"
                                 >
                                     <option value="">{t.business.fields.objective_placeholder}</option>
                                     {timeframes.map(opt => <option key={opt} value={opt}>{opt}</option>)}
@@ -211,10 +160,10 @@ Email de contacto: ${formData.email}
                                     {t.business.fields.priority}
                                 </label>
                                 <select
-                                    required
+                                    disabled
                                     value={formData.priority}
                                     onChange={(e) => setFormData({ ...formData, priority: e.target.value })}
-                                    className="w-full px-4 py-3 rounded-xl border border-[var(--slate-200)] bg-white focus:outline-none focus:ring-2 focus:ring-[var(--ai-primary)]/20 focus:border-[var(--ai-primary)] transition-all"
+                                    className="w-full px-4 py-3 rounded-xl border border-[var(--slate-200)] bg-white opacity-60 focus:outline-none transition-all"
                                 >
                                     <option value="">{t.business.fields.objective_placeholder}</option>
                                     {priorities.map(opt => <option key={opt} value={opt}>{opt}</option>)}
@@ -227,35 +176,24 @@ Email de contacto: ${formData.email}
                                 </label>
                                 <input
                                     type="email"
-                                    required
+                                    disabled
                                     value={formData.email}
                                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                     placeholder="your@company.com"
-                                    className="w-full px-4 py-3 rounded-xl border border-[var(--slate-200)] bg-white focus:outline-none focus:ring-2 focus:ring-[var(--ai-primary)]/20 focus:border-[var(--ai-primary)] transition-all"
+                                    className="w-full px-4 py-3 rounded-xl border border-[var(--slate-200)] bg-white opacity-60 focus:outline-none transition-all"
                                 />
                             </div>
                         </div>
 
                         {/* Submit Button & Status */}
-                        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-4 border-t border-[var(--slate-100)]">
+                        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-4 border-t border-[var(--slate-100)] relative z-40">
                             <button
-                                type="submit"
-                                disabled={loading || status === 'success'}
-                                className={`btn-ai group px-8 ${status === 'success' ? 'bg-emerald-500 text-white border-emerald-500' : 'btn-ai-primary'}`}
+                                type="button"
+                                onClick={onOpenWhitelist}
+                                className="btn-ai btn-ai-primary group px-8"
                             >
-                                {status === 'loading' ? (
-                                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                                ) : status === 'success' ? (
-                                    <div className="flex items-center gap-2">
-                                        <CheckCircle2 className="w-5 h-5" />
-                                        {t.business.success_msg}
-                                    </div>
-                                ) : (
-                                    <>
-                                        {t.business.btn_search}
-                                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                                    </>
-                                )}
+                                {t.business.btn_search}
+                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </button>
 
                             {status === 'success' && (

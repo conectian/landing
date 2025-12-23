@@ -643,9 +643,9 @@ export const translations = {
             pay_per_results_title: "Modèle 'Pay per Results'",
             pay_per_results_desc: "Nous sommes les seuls à lier le paiement de l'implémentation à l'atteinte des métriques de retour sur investissement (ROI) convenues.",
             steps: [
-                { title: "Nous écoutons", desc: "Nous identifions les tâches répétitives et les goulots d'étranglement qui freinent votre croissance. Nous comprenons votre entreprise avant de proposer la technologie." },
-                { title: "Match Intelligent", desc: "Nous filtrons notre réseau de partenaires vérifiés pour trouver le fournisseur ayant le cas de succès le plus pertinent pour votre entreprise." },
-                { title: "Résultats Garantis", desc: "Nous implémentons la solution et lions le succès du projet au ROI obtenu. Si cela ne fonctionne pas, vous ne payez pas." }
+                { label: "1. RACONTEZ-NOUS VOTRE PROBLÈME", title: "Nous écoutons", desc: "Nous identifions les tâches répétitives et les goulots d'étranglement qui freinent votre croissance. Nous comprenons votre entreprise avant de proposer la technologie." },
+                { label: "2. NOUS VOUS MONTRONS DES CAS SIMILAIRES", title: "Match Intelligent", desc: "Nous filtrons notre réseau de partenaires vérifiés pour trouver le fournisseur ayant le cas de succès le plus pertinent pour votre entreprise." },
+                { label: "3. NOUS L'IMPLÉMENTONS AVEC VOUS", title: "Résultats Garantis", desc: "Nous implémentons la solution et lions le succès du projet au ROI obtenu. Si cela ne fonctionne pas, vous ne payez pas." }
             ]
         },
         deal_room: {
@@ -879,9 +879,9 @@ export const translations = {
             pay_per_results_title: "Modello 'Pay per Results'",
             pay_per_results_desc: "Siamo gli unici a vincolare il pagamento dell'implementazione al raggiungimento delle metriche di ritorno sull'investimento (ROI) concordate.",
             steps: [
-                { title: "Ascoltiamo", desc: "Identifichiamo le attività ripetitive e i colli di bottiglia che frenano la tua crescita. Capiamo il tuo business prima di proporre tecnologia." },
-                { title: "Match Intelligente", desc: "Filtriamo la nostra rete di partner verificati per trovarti il fornitore con il caso di successo più rilevante per la tua azienda." },
-                { title: "Risultati Garantiti", desc: "Implementiamo la soluzione e vincoliamo il successo del progetto al ROI ottenuto. Se non funziona, non paghi." }
+                { label: "1. RACCONTACI IL TUO PROBLEMA", title: "Ascoltiamo", desc: "Identifichiamo le attività ripetitive e i colli di bottiglia che frenano la tua crescita. Capiamo il tuo business prima di proporre tecnologia." },
+                { label: "2. TI MOSTRIAMO CASI SIMILI", title: "Match Intelligente", desc: "Filtriamo la nostra rete di partner verificati per trovarti il fornitore con il caso di successo più rilevante per la tua azienda." },
+                { label: "3. LO IMPLEMENTIAMO CON TE", title: "Risultati Garantiti", desc: "Implementiamo la soluzione e vincoliamo il successo del progetto al ROI ottenuto. Se non funziona, non paghi." }
             ]
         },
         deal_room: {
@@ -1115,9 +1115,9 @@ export const translations = {
             pay_per_results_title: "'Pay per Results'-Modell",
             pay_per_results_desc: "Wir sind die Einzigen, die die Bezahlung der Implementierung an das Erreichen der vereinbarten ROI-Kennzahlen knüpfen.",
             steps: [
-                { title: "Wir hören zu", desc: "Wir identifizieren repetitive Aufgaben und Engpässe, die Ihr Wachstum bremsen. Wir verstehen Ihr Geschäft, bevor wir Technologie vorschlagen." },
-                { title: "Smart Match", desc: "Wir filtern unser Netzwerk verifizierter Partner, um den Anbieter mit der relevantesten Erfolgsgeschichte für Ihr Unternehmen zu finden." },
-                { title: "Garantierte Ergebnisse", desc: "Wir implementieren die Lösung und knüpfen den Projekterfolg an den erzielten ROI. Wenn es nicht funktioniert, zahlen Sie nicht." }
+                { label: "1. ERZÄHLEN SIE UNS IHR PROBLEM", title: "Wir hören zu", desc: "Wir identifizieren repetitive Aufgaben und Engpässe, die Ihr Wachstum bremsen. Wir verstehen Ihr Geschäft, bevor wir Technologie vorschlagen." },
+                { label: "2. WIR ZEIGEN IHNEN ÄHNLICHE FÄLLE", title: "Smart Match", desc: "Wir filtern unser Netzwerk verifizierter Partner, um den Anbieter mit der relevantesten Erfolgsgeschichte für Ihr Unternehmen zu finden." },
+                { label: "3. WIR IMPLEMENTIEREN ES MIT IHNEN", title: "Garantierte Ergebnisse", desc: "Wir implementieren die Lösung und knüpfen den Projekterfolg an den erzielten ROI. Wenn es nicht funktioniert, zahlen Sie nicht." }
             ]
         },
         deal_room: {
@@ -1351,9 +1351,9 @@ export const translations = {
             pay_per_results_title: "「成果報酬型」モデル",
             pay_per_results_desc: "導入費用の支払いを、合意された投資収益率（ROI）指標の達成にリンクさせる唯一の企業です。",
             steps: [
-                { title: "ヒアリング", desc: "成長を妨げる反復タスクやボトルネックを特定します。技術を提案する前に、あなたのビジネスを理解します。" },
-                { title: "スマートマッチ", desc: "検証済みパートナーのネットワークをフィルタリングし、あなたのビジネスに最も関連性の高い成功事例を持つプロバイダーを見つけます。" },
-                { title: "結果保証", desc: "ソリューションを実装し、プロジェクトの成功を達成されたROIにリンクさせます。機能しなければ、支払いは不要です。" }
+                { label: "1. あなたの課題を教えてください", title: "ヒアリング", desc: "成長を妨げる反復タスクやボトルネックを特定します。技術を提案する前に、あなたのビジネスを理解します。" },
+                { label: "2. 類似事例をご紹介します", title: "スマートマッチ", desc: "検証済みパートナーのネットワークをフィルタリングし、あなたのビジネスに最も関連性の高い成功事例を持つプロバイダーを見つけます。" },
+                { label: "3. 一緒に導入を進めます", title: "結果保証", desc: "ソリューションを実装し、プロジェクトの成功を達成されたROIにリンクさせます。機能しなければ、支払いは不要です。" }
             ]
         },
         deal_room: {
@@ -1587,9 +1587,9 @@ export const translations = {
             pay_per_results_title: "“按结果付费”模式",
             pay_per_results_desc: "我们是唯一将实施付款与达成商定的投资回报率 (ROI) 指标挂钩的公司。",
             steps: [
-                { title: "倾听", desc: "我们识别阻碍您增长的重复性任务和瓶颈。在提出技术建议之前，我们要先了解您的业务。" },
-                { title: "智能匹配", desc: "我们筛选已验证的合作伙伴网络，为您找到拥有最相关成功案例的供应商。" },
-                { title: "结果保证", desc: "我们实施解决方案，并将项目成功与实现的 ROI 挂钩。如果不起作用，您无需付费。" }
+                { label: "1. 告诉我们您的问题", title: "倾听", desc: "我们识别阻碍您增长的重复性任务和瓶颈。在提出技术建议之前，我们要先了解您的业务。" },
+                { label: "2. 我们为您展示类似案例", title: "智能匹配", desc: "我们筛选已验证的合作伙伴网络，为您找到拥有最相关成功案例的供应商。" },
+                { label: "3. 我们与您共同实施", title: "结果保证", desc: "我们实施解决方案，并将项目成功与实现的 ROI 挂钩。如果不起作用，您无需付费。" }
             ]
         },
         deal_room: {

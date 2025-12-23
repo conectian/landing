@@ -164,16 +164,16 @@ export const translations = {
             ]
         },
         value_prop: {
-            badge: "Nuestro Método",
+            badge: "NUESTRO MÉTODO",
             title_part1: "Aplicamos lo que ",
             title_part2: "ya funciona",
-            desc: "Nuestra metodología está diseñada para eliminar el riesgo de la adopción de IA. Nos enfocamos en resultados tangibles y medibles que impactan directamente en tu cuenta de resultados.",
+            desc: "Sin pruebas, sin experimentos. Solo soluciones IA con historial de éxito probado.",
             pay_per_results_title: "Modelo 'Pay per Results'",
             pay_per_results_desc: "Somos los únicos que vinculamos el pago de la implementación a la consecución de las métricas de retorno de inversión (ROI) acordadas.",
             steps: [
-                { title: "Escuchamos", desc: "Identificamos las tareas repetitivas y cuellos de botella que frenan tu crecimiento. Entendemos tu negocio antes de proponer tecnología." },
-                { title: "Match Inteligente", desc: "Filtramos nuestra red de partners verificados para encontrarte al proveedor con el caso de éxito más relevante para tu negocio." },
-                { title: "Resultados Garantizados", desc: "Implementamos la solución y vinculamos el éxito del proyecto al ROI conseguido. Si no funciona, no pagas." }
+                { label: "1. CUÉNTANOS TU PROBLEMA", title: "Te escuchamos", desc: "\"Perdemos horas en tareas repetitivas\" · \"El soporte no da abasto\" · \"No sabemos qué clientes priorizar\"" },
+                { label: "2. TE MOSTRAMOS CASOS SIMILARES", title: "Soluciones ya probadas", desc: "Te enseñamos empresas como la tuya que ya resolvieron ese problema con IA, con métricas reales." },
+                { label: "3. LO IMPLEMENTAMOS CONTIGO", title: "Resultados garantizados", desc: "Aplicamos la misma solución que ya funcionó. Si no obtienes resultados, no pagas." }
             ]
         },
         deal_room: {
@@ -400,16 +400,16 @@ export const translations = {
             ]
         },
         value_prop: {
-            badge: "Our Method",
-            title_part1: "Apply what ",
+            badge: "OUR METHOD",
+            title_part1: "We apply what ",
             title_part2: "already works",
-            desc: "Our methodology is designed to eliminate the risk of AI adoption. We focus on tangible and measurable results that directly impact your bottom line.",
+            desc: "No trials, no experiments. Only AI solutions with a proven track record of success.",
             pay_per_results_title: "'Pay per Results' Model",
-            pay_per_results_desc: "We are the only ones who link the payment of the implementation to the achievement of agreed ROI metrics.",
+            pay_per_results_desc: "We are the only ones who link the implementation payment to the achievement of agreed ROI metrics.",
             steps: [
-                { title: "We Listen", desc: "We identify repetitive tasks and bottlenecks that slow your growth. We understand your business before proposing technology." },
-                { title: "Smart Match", desc: "We filter our network of verified partners to find the provider with the most relevant success case for your business." },
-                { title: "Guaranteed Results", desc: "We implement the solution and link the project result to the achieved ROI. If it doesn't work, you don't pay." }
+                { label: "1. TELL US YOUR PROBLEM", title: "We listen", desc: "\"We waste hours on repetitive tasks\" · \"Support is overwhelmed\" · \"We don't know which leads to prioritize\"" },
+                { label: "2. WE SHOW YOU SIMILAR CASES", title: "Proven solutions", desc: "We show you companies like yours that already solved that problem with AI, with real metrics." },
+                { label: "3. WE IMPLEMENT IT WITH YOU", title: "Guaranteed results", desc: "We apply the same solution that already worked. If you don't get results, you don't pay." }
             ]
         },
         deal_room: {

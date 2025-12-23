@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { headers } from 'next/headers';
 import "./globals.css";
@@ -8,6 +8,11 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export async function generateMetadata(): Promise<Metadata> {
   const headersList = await headers();
@@ -32,7 +37,6 @@ export async function generateMetadata(): Promise<Metadata> {
     description: t.desc,
     keywords: ["IA para empresas", "AI for business", "Marketplace IA", "Proveedores de IA", "AI providers", "Casos de éxito IA", "AI success cases"],
     authors: [{ name: "Conectian" }],
-    viewport: "width=device-width, initial-scale=1",
     robots: "index, follow",
     alternates: {
       canonical: "https://conectian.com",

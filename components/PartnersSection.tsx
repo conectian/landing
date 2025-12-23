@@ -4,37 +4,6 @@ import { motion } from "framer-motion";
 import { UserCheck, Zap, BarChart, Globe, ArrowRight, Shield } from "lucide-react";
 import Link from "next/link";
 
-const steps = [
-    {
-        id: "step-1",
-        icon: <UserCheck className="w-6 h-6 text-purple-600" />,
-        title: "Perfil del Proveedor",
-        description: "Definimos tu experiencia, sectores clave y capacidades técnicas del equipo.",
-        tags: ["Experiencia", "Regiones", "Sectores"]
-    },
-    {
-        id: "step-2",
-        icon: <Zap className="w-6 h-6 text-purple-600" />,
-        title: "Stacks y Casos",
-        description: "Detallamos tus stacks tecnológicos (LLMs, RAG, MLOps) y tus 3 mejores casos de éxito.",
-        tags: ["Tech Stack", "Integraciones", "PoCs"]
-    },
-    {
-        id: "step-3",
-        icon: <BarChart className="w-6 h-6 text-purple-600" />,
-        title: "Métricas Verificadas",
-        description: "Validamos el impacto real: antes vs después, KPIs alcanzados y evidencia de ROI.",
-        tags: ["KPIs", "ROI", "Evidencias"]
-    },
-    {
-        id: "step-4",
-        icon: <Globe className="w-6 h-6 text-purple-600" />,
-        title: "Publicación Verificada",
-        description: "Tu perfil aparece como 'Verified Partner' con un sello de confianza para las empresas.",
-        tags: ["Sello IA", "Lead Gen", "Visibilidad"]
-    }
-];
-
 import { useLanguage } from "@/context/LanguageContext";
 
 interface PartnersSectionProps {
@@ -57,9 +26,9 @@ export default function PartnersSection({ onOpenWhitelist }: PartnersSectionProp
             <div className="absolute -top-24 -right-24 w-96 h-96 bg-purple-500/5 blur-[100px] rounded-full -z-10" />
             <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-indigo-500/5 blur-[100px] rounded-full -z-10" />
 
-            <div className="grid lg:grid-cols-12 gap-16 items-start">
+            <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
                 {/* Left side: Header */}
-                <div className="lg:col-span-5 sticky top-32">
+                <div className="lg:col-span-5 lg:sticky lg:top-32">
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -109,7 +78,7 @@ export default function PartnersSection({ onOpenWhitelist }: PartnersSectionProp
                     >
                         <Link
                             href="/partners"
-                            className="btn-ai bg-purple-600 text-white hover:bg-purple-700 shadow-purple-200 inline-flex items-center gap-2"
+                            className="btn-ai group bg-purple-600 text-white hover:bg-purple-700 shadow-purple-200 inline-flex items-center gap-2"
                         >
                             {t.partners.btn_join}
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -127,7 +96,7 @@ export default function PartnersSection({ onOpenWhitelist }: PartnersSectionProp
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="group p-8 rounded-[2rem] bg-white border border-[var(--slate-100)] shadow-premium-sm hover:shadow-premium-md transition-all duration-300 relative"
+                                className="group p-6 md:p-8 rounded-[2rem] bg-white border border-[var(--slate-100)] shadow-sm hover:shadow-premium transition-all duration-300 relative"
                             >
                                 <div className="flex flex-col md:flex-row gap-6 items-start">
                                     <div className="w-14 h-14 rounded-2xl bg-purple-50 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-500">
@@ -136,7 +105,7 @@ export default function PartnersSection({ onOpenWhitelist }: PartnersSectionProp
                                     <div className="flex-1">
                                         <div className="flex items-center justify-between mb-2">
                                             <span className="text-xs font-black text-purple-300 uppercase tracking-widest">{language === "es" ? "Paso" : "Step"} {index + 1}</span>
-                                            <div className="flex gap-2">
+                                            <div className="flex flex-wrap gap-2 justify-end">
                                                 {step.tags.map((tag: string) => (
                                                     <span key={tag} className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[var(--slate-50)] text-[var(--slate-400)]">
                                                         {tag}

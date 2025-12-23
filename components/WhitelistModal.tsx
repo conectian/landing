@@ -76,7 +76,7 @@ export default function WhitelistModal({ isOpen, onClose }: WhitelistModalProps)
                         initial={{ opacity: 0, scale: 0.9, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                        className="relative w-full max-w-2xl bg-white rounded-3xl md:rounded-[2.5rem] shadow-2xl p-6 md:p-10 lg:p-12 overflow-hidden"
+                        className="relative !overflow-auto max-h-[90svh] w-full max-w-2xl bg-white rounded-3xl md:rounded-[2.5rem] shadow-2xl p-6 md:p-10 lg:p-12 overflow-hidden"
                     >
                         {/* Close button */}
                         <button

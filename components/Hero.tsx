@@ -56,8 +56,7 @@ export default function Hero({ onOpenWhitelist }: HeroProps) {
                             className="text-5xl md:text-7xl font-black text-[var(--slate-900)] mb-8 leading-[1] tracking-tight"
                         >
                             {t.hero.title_part1}
-                            <span className="text-[var(--ai-primary)]">{t.hero.highlight1}</span>
-                            <br className="hidden md:block" />
+                            <span className="text-[var(--ai-primary)] pr-2">{t.hero.highlight1}</span>
                             {t.hero.title_part2}
                             <span className="text-[var(--ai-primary)]">{t.hero.highlight2}</span>
                         </motion.h1>

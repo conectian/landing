@@ -184,4 +184,5 @@ h3 {
   color: var(--ai-primary);
   border: 1px solid var(--slate-200);
   margin-bottom: 1rem;
+  align-items: center;
 }

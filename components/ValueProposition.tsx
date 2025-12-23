@@ -1,29 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Headphones, CheckCircle2, ShieldCheck, ArrowRight } from "lucide-react";
-
-const methodSteps = [
-    {
-        number: "01",
-        icon: <Headphones className="w-8 h-8 text-[var(--ai-primary)]" />,
-        title: "Escuchamos",
-        description: "Identificamos las tareas repetitivas y cuellos de botella que frenan tu crecimiento. Entendemos tu negocio antes de proponer tecnología.",
-    },
-    {
-        number: "02",
-        icon: <CheckCircle2 className="w-8 h-8 text-[var(--ai-primary)]" />,
-        title: "Match Inteligente",
-        description: "Filtramos nuestra red de partners verificados para encontrarte al proveedor con el caso de éxito más relevante para tu negocio.",
-    },
-    {
-        number: "03",
-        icon: <ShieldCheck className="w-8 h-8 text-[var(--ai-primary)]" />,
-        title: "Resultados Garantizados",
-        description: "Implementamos la solución y vinculamos el éxito del proyecto al ROI conseguido. Si no funciona, no pagas.",
-    },
-];
-
+import { Headphones, CheckCircle2, ShieldCheck } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function ValueProposition() {
@@ -105,8 +83,11 @@ export default function ValueProposition() {
                                     {icons[index]}
                                 </div>
                                 <div>
+                                    <span className="text-[10px] font-bold text-[var(--slate-400)] uppercase tracking-wider block mb-1">
+                                        {step.label}
+                                    </span>
                                     <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                                    <p className="text-[var(--slate-500)] leading-relaxed">
+                                    <p className="text-[var(--slate-500)] leading-relaxed text-sm">
                                         {step.desc}
                                     </p>
                                 </div>

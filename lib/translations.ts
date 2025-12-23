@@ -4,9 +4,9 @@ export const translations = {
             inicio: "Inicio",
             casos: "Casos de Éxito",
             metodo: "Nuestro Método",
-            partners: "Partners",
+            partners: "Para Partners",
             faq: "FAQ",
-            empresas: "Empresas",
+            empresas: "Para Empresas",
             cta: "Empezar ahora",
             demo: "Hablar con un experto",
             acceso: "Acceso Clientes"
@@ -36,7 +36,8 @@ export const translations = {
                 metric1_label: "Procesamiento de facturas",
                 metric2_val: "+50% ventas",
                 metric2_label: "Leads priorizados por IA"
-            }
+            },
+            trust_bar: ["Casos de éxito verificados", "Soluciones IA probadas", "Resultados garantizados"]
         },
         business: {
             title: "Encuentra la solución IA para tu negocio",
@@ -112,6 +113,7 @@ export const translations = {
             success: "¡Enviado con éxito!",
             error: "Error al enviar.",
             thank_you: "¡Gracias! Revisaremos tu información.",
+            onboarding_title: "Onboarding en 4 sencillos pasos",
             field_select_placeholder: "Seleccionar...",
             options_level: ["Bronce", "Plata", "Oro"],
             options_closure: ["2-4 semanas", "4-8 semanas", "8-12 semanas", "12+ semanas"],
@@ -145,12 +147,31 @@ export const translations = {
                     desc: "Tu perfil aparece como 'Verified Partner' con un sello de confianza para las empresas.",
                     tags: ["Sello IA", "Lead Gen", "Visibilidad"]
                 }
-            ]
+            ],
+            gtm_section: {
+                badge: "PROGRAMAS DE CRECIMIENTO PARA PROVEEDORES",
+                title: "IA Go-to-Market — 360º",
+                btn: "Quiero resultados con IA",
+                cards: [
+                    {
+                        title: "Ficha verificada + ABM",
+                        items: ["Publicación en red CONECTIAN", "Segmentación por sector/país", "Mensajes por caso verificado"]
+                    },
+                    {
+                        title: "PR & Confianza",
+                        items: ["Case story (sin datos sensibles)", "Webinars con cliente (si aplica)", "Badge 'Verified by CONECTIAN'"]
+                    },
+                    {
+                        title: "Sales Enablement",
+                        items: ["One-pagers por caso", "ROI calculators", "Playbook de objeciones"]
+                    }
+                ]
+            }
         },
         use_cases: {
-            badge: "Para Empresas",
-            title: "Encuentra tu solución",
-            desc: "Encuentra la solución ideal entre cientos de casos de éxito verificados de nuestra red de partners. No reinventamos la rueda: te conectamos con lo que ya funciona.",
+            badge: "CASOS DE ÉXITO REALES",
+            title: "Problemas que ya hemos resuelto",
+            desc: "Estos son casos reales donde la IA ya demostró su valor.",
             footer_title: "¿No encuentras tu caso específico?",
             footer_desc: "Nuestro equipo de expertos puede analizar tu problema y proponer soluciones ya probadas.",
             footer_btn: "Solicitar Auditoría Gratuita",
@@ -161,14 +182,26 @@ export const translations = {
                 { title: "Análisis de contratos con IA", category: "LEGAL", metrics: ["De minutos a segundos por cláusula", "Alertas automáticas de riesgos"] },
                 { title: "Automatización de procesos", category: "OPERACIONES", metrics: ["+30% productividad", "Menos errores humanos"] },
                 { title: "Predicción de demanda", category: "LOGÍSTICA", metrics: ["Stock optimizado automáticamente", "Menos rupturas, menos exceso"] }
-            ]
+            ],
+            stats: [
+                { value: "150+", label: "Casos de éxito implementados" },
+                { value: "95%", label: "Clientes satisfechos con resultados" },
+                { value: "< 6 meses", label: "Tiempo medio de ROI positivo" }
+            ],
+            how_we_work: {
+                badge: "CÓMO TRABAJAMOS",
+                title: "Dos caminos hacia el éxito",
+                desc: "Para empresas que buscan soluciones probadas y para partners que quieren escalar.",
+                btn_enterprise: "Si tienes un problema",
+                btn_partner: "Si eres proveedor IA"
+            }
         },
         value_prop: {
             badge: "NUESTRO MÉTODO",
             title_part1: "Aplicamos lo que ",
             title_part2: "ya funciona",
             desc: "Sin pruebas, sin experimentos. Solo soluciones IA con historial de éxito probado.",
-            pay_per_results_title: "Modelo 'Pay per Results'",
+            pay_per_results_title: "Modelo de 'Pago por Resultados'",
             pay_per_results_desc: "Somos los únicos que vinculamos el pago de la implementación a la consecución de las métricas de retorno de inversión (ROI) acordadas.",
             steps: [
                 { label: "1. CUÉNTANOS TU PROBLEMA", title: "Te escuchamos", desc: "\"Perdemos horas en tareas repetitivas\" · \"El soporte no da abasto\" · \"No sabemos qué clientes priorizar\"" },
@@ -185,7 +218,7 @@ export const translations = {
             strategic_desc: "Sesiones periódicas para alinear la tecnología con tus objetivos de negocio.",
             security_title: "Seguridad Enterprise",
             security_desc: "Infraestructura blindada y cumplimiento normativo garantizado por contrato.",
-            btn: "Solicitar consulta gratuita",
+            btn: "Encontrar soluciones",
             stages: [
                 { title: "Pilot Sprint", duration: "4-6 semanas", desc: "Validamos técnicamente el caso de uso con tus propios datos antes de escalar.", items: ["Prueba de concepto (PoC)", "Validación de métricas", "Cálculo de ROI real"] },
                 { title: "Adopción de IA", duration: "Continuo", desc: "Integramos la solución en tus flujos de trabajo y formamos a tu equipo.", items: ["Integración vía API/CRM", "Formación de usuarios", "Soporte técnico dedicado"] },
@@ -240,9 +273,9 @@ export const translations = {
             inicio: "Home",
             casos: "Success Cases",
             metodo: "Our Method",
-            partners: "Partners",
+            partners: "For Partners",
             faq: "FAQ",
-            empresas: "Business",
+            empresas: "For Business",
             cta: "Get Started",
             demo: "Talk to an Expert",
             acceso: "Client Access"
@@ -272,7 +305,8 @@ export const translations = {
                 metric1_label: "Invoice processing",
                 metric2_val: "+50% sales",
                 metric2_label: "AI prioritized leads"
-            }
+            },
+            trust_bar: ["Verified success cases", "Proven AI solutions", "Guaranteed results"]
         },
         business: {
             title: "Find the AI solution for your business",
@@ -348,6 +382,7 @@ export const translations = {
             success: "Sent Successfully!",
             error: "Error sending info.",
             thank_you: "Thank you! We'll review your info.",
+            onboarding_title: "Onboarding in 4 simple steps",
             field_select_placeholder: "Select...",
             options_level: ["Bronze", "Silver", "Gold"],
             options_closure: ["2-4 weeks", "4-8 weeks", "8-12 weeks", "12+ weeks"],
@@ -381,12 +416,31 @@ export const translations = {
                     desc: "Your profile appears as a 'Verified Partner' with a seal of trust for companies.",
                     tags: ["AI Seal", "Lead Gen", "Visibility"]
                 }
-            ]
+            ],
+            gtm_section: {
+                badge: "GROWTH PROGRAMS FOR PROVIDERS",
+                title: "AI Go-to-Market — 360º",
+                btn: "I want results with AI",
+                cards: [
+                    {
+                        title: "Verified Profile + ABM",
+                        items: ["Publication in CONECTIAN network", "Segmentation by sector/country", "Messages by verified case"]
+                    },
+                    {
+                        title: "PR & Trust",
+                        items: ["Case story (no sensitive data)", "Webinars with client (if applicable)", "Badge 'Verified by CONECTIAN'"]
+                    },
+                    {
+                        title: "Sales Enablement",
+                        items: ["One-pagers per case", "ROI calculators", "Objection playbook"]
+                    }
+                ]
+            }
         },
         use_cases: {
-            badge: "For Business",
-            title: "Find your solution",
-            desc: "Find the ideal solution among hundreds of verified success cases from our partner network. We don't reinvent the wheel: we connect you with what already works.",
+            badge: "REAL SUCCESS CASES",
+            title: "Problems we've already solved",
+            desc: "These are real cases where AI has already proven its value.",
             footer_title: "Can't find your specific case?",
             footer_desc: "Our team of experts can analyze your problem and propose already proven solutions.",
             footer_btn: "Request Free Audit",
@@ -397,7 +451,19 @@ export const translations = {
                 { title: "AI Contract Analysis", category: "LEGAL", metrics: ["From minutes to seconds per clause", "Automatic risk alerts"] },
                 { title: "Process Automation", category: "OPERATIONS", metrics: ["+30% productivity", "Fewer human errors"] },
                 { title: "Demand Prediction", category: "LOGISTICS", metrics: ["Automatically optimized stock", "Fewer stockouts, less excess"] }
-            ]
+            ],
+            stats: [
+                { value: "150+", label: "Success cases implemented" },
+                { value: "95%", label: "Satisfied customers with results" },
+                { value: "< 6 months", label: "Average time to positive ROI" }
+            ],
+            how_we_work: {
+                badge: "HOW WE WORK",
+                title: "Two paths to success",
+                desc: "For companies looking for proven solutions and for partners who want to scale.",
+                btn_enterprise: "If you have a problem",
+                btn_partner: "If you are an AI provider"
+            }
         },
         value_prop: {
             badge: "OUR METHOD",
@@ -421,7 +487,7 @@ export const translations = {
             strategic_desc: "Periodic sessions to align technology with your business objectives.",
             security_title: "Enterprise Security",
             security_desc: "Bulletproof infrastructure and regulatory compliance guaranteed by contract.",
-            btn: "Request free consultation",
+            btn: "Find solutions",
             stages: [
                 { title: "Pilot Sprint", duration: "4-6 weeks", desc: "We technically validate the use case with your own data before scaling.", items: ["Proof of Concept (PoC)", "Metric validation", "Real ROI calculation"] },
                 { title: "AI Adoption", duration: "Ongoing", desc: "We integrate the solution into your workflows and train your team.", items: ["Integration via API/CRM", "User training", "Dedicated tech support"] },
@@ -476,9 +542,9 @@ export const translations = {
             inicio: "Accueil",
             casos: "Cas Clients",
             metodo: "Notre Méthode",
-            partners: "Partenaires",
+            partners: "Pour Partenaires",
             faq: "FAQ",
-            empresas: "Entreprises",
+            empresas: "Pour Entreprises",
             cta: "Commencer",
             demo: "Parler à un expert",
             acceso: "Accès Client"
@@ -508,7 +574,8 @@ export const translations = {
                 metric1_label: "Traitement des factures",
                 metric2_val: "+50% ventes",
                 metric2_label: "Leads priorisés par IA"
-            }
+            },
+            trust_bar: ["Cas de succès vérifiés", "Solutions IA éprouvées", "Résultats garantis"]
         },
         business: {
             title: "Trouvez la solution IA pour votre entreprise",
@@ -584,6 +651,7 @@ export const translations = {
             success: "Envoyé avec succès !",
             error: "Erreur lors de l'envoi.",
             thank_you: "Merci ! Nous allons examiner vos informations.",
+            onboarding_title: "Onboarding en 4 étapes simples",
             field_select_placeholder: "Sélectionner...",
             options_level: ["Bronze", "Argent", "Or"],
             options_closure: ["2-4 semaines", "4-8 semaines", "8-12 semaines", "12+ semaines"],
@@ -617,12 +685,31 @@ export const translations = {
                     desc: "Votre profil apparaît comme 'Verified Partner' avec un sceau de confiance pour les entreprises.",
                     tags: ["Sceau IA", "Lead Gen", "Visibilité"]
                 }
-            ]
+            ],
+            gtm_section: {
+                badge: "PROGRAMMES DE CROISSANCE POUR FOURNISSEURS",
+                title: "IA Go-to-Market — 360º",
+                btn: "Je veux des résultats avec l'IA",
+                cards: [
+                    {
+                        title: "Profil vérifié + ABM",
+                        items: ["Publication dans le réseau CONECTIAN", "Segmentation par secteur/pays", "Messages par cas vérifié"]
+                    },
+                    {
+                        title: "PR & Confiance",
+                        items: ["Étude de cas (sans données sensibles)", "Webinaires avec client (si applicable)", "Badge 'Verified by CONECTIAN'"]
+                    },
+                    {
+                        title: "Sales Enablement",
+                        items: ["One-pagers par cas", "Calculateurs de ROI", "Playbook d'objections"]
+                    }
+                ]
+            }
         },
         use_cases: {
-            badge: "Pour les Entreprises",
-            title: "Trouvez votre solution",
-            desc: "Trouvez la solution idéale parmi des centaines de cas de succès vérifiés de notre réseau de partenaires. Nous ne réinventons pas la roue : nous vous connectons à ce qui fonctionne déjà.",
+            badge: "CAS DE SUCCÈS RÉELS",
+            title: "Problèmes déjà résolus",
+            desc: "Ce sont des cas réels où l'IA a déjà prouvé sa valeur.",
             footer_title: "Vous ne trouvez pas votre cas spécifique ?",
             footer_desc: "Notre équipe d'experts peut analyser votre problème et proposer des solutions déjà éprouvées.",
             footer_btn: "Demander un Audit Gratuit",
@@ -633,14 +720,26 @@ export const translations = {
                 { title: "Analyse de contrats par IA", category: "JURIDIQUE", metrics: ["De minutes à secondes par clause", "Alertes automatiques de risques"] },
                 { title: "Automatisation des processus", category: "OPÉRATIONS", metrics: ["+30% de productivité", "Moins d'erreurs humaines"] },
                 { title: "Prédiction de la demande", category: "LOGISTIQUE", metrics: ["Stock optimisé automatiquement", "Moins de ruptures, moins d'excès"] }
-            ]
+            ],
+            stats: [
+                { value: "150+", label: "Cas de succès implémentés" },
+                { value: "95%", label: "Clients satisfaits des résultats" },
+                { value: "< 6 mois", label: "Temps moyen pour ROI positif" }
+            ],
+            how_we_work: {
+                badge: "COMMENT NOUS TRAVAILLONS",
+                title: "Deux chemins vers le succès",
+                desc: "Pour les entreprises à la recherche de solutions éprouvées et pour les partenaires qui souhaitent évoluer.",
+                btn_enterprise: "Si vous avez un problème",
+                btn_partner: "Si vous êtes un fournisseur d'IA"
+            }
         },
         value_prop: {
             badge: "Notre Méthode",
             title_part1: "Nous appliquons ce qui ",
             title_part2: "fonctionne déjà",
             desc: "Notre méthodologie est conçue pour éliminer le risque lié à l'adoption de l'IA. Nous nous concentrons sur des résultats tangibles et mesurables qui impactent directement vos résultats.",
-            pay_per_results_title: "Modèle 'Pay per Results'",
+            pay_per_results_title: "Modèle de 'Paiement aux Résultats'",
             pay_per_results_desc: "Nous sommes les seuls à lier le paiement de l'implémentation à l'atteinte des métriques de retour sur investissement (ROI) convenues.",
             steps: [
                 { label: "1. RACONTEZ-NOUS VOTRE PROBLÈME", title: "Nous écoutons", desc: "Nous identifions les tâches répétitives et les goulots d'étranglement qui freinent votre croissance. Nous comprenons votre entreprise avant de proposer la technologie." },
@@ -657,7 +756,7 @@ export const translations = {
             strategic_desc: "Sessions périodiques pour aligner la technologie avec vos objectifs commerciaux.",
             security_title: "Sécurité Enterprise",
             security_desc: "Infrastructure blindée et conformité réglementaire garantie par contrat.",
-            btn: "Demander une consultation gratuite",
+            btn: "Trouver des solutions",
             stages: [
                 { title: "Pilot Sprint", duration: "4-6 semaines", desc: "Nous validons techniquement le cas d'usage avec vos propres données avant de passer à l'échelle.", items: ["Preuve de Concept (PoC)", "Validation des métriques", "Calcul du ROI réel"] },
                 { title: "Adoption de l'IA", duration: "Continu", desc: "Nous intégrons la solution dans vos flux de travail et formons votre équipe.", items: ["Intégration via API/CRM", "Formation des utilisateurs", "Support technique dédié"] },
@@ -712,9 +811,9 @@ export const translations = {
             inicio: "Home",
             casos: "Casi di Successo",
             metodo: "Il Nostro Metodo",
-            partners: "Partner",
+            partners: "Per Partner",
             faq: "FAQ",
-            empresas: "Aziende",
+            empresas: "Per Aziende",
             cta: "Inizia ora",
             demo: "Parla con un esperto",
             acceso: "Accesso Clienti"
@@ -744,7 +843,8 @@ export const translations = {
                 metric1_label: "Elaborazione fatture",
                 metric2_val: "+50% vendite",
                 metric2_label: "Lead prioritizzati da IA"
-            }
+            },
+            trust_bar: ["Casi di successo verificati", "Soluzioni IA comprovate", "Risultati garantiti"]
         },
         business: {
             title: "Trova la soluzione IA per la tua azienda",
@@ -820,6 +920,7 @@ export const translations = {
             success: "Inviato con successo!",
             error: "Errore durante l'invio.",
             thank_you: "Grazie! Esamineremo le tue informazioni.",
+            onboarding_title: "Onboarding in 4 semplici passaggi",
             field_select_placeholder: "Seleziona...",
             options_level: ["Bronzo", "Argento", "Oro"],
             options_closure: ["2-4 settimane", "4-8 settimane", "8-12 settimane", "12+ settimane"],
@@ -853,12 +954,31 @@ export const translations = {
                     desc: "Il tuo profilo appare come 'Verified Partner' con un sigillo di fiducia per le aziende.",
                     tags: ["Sigillo IA", "Lead Gen", "Visibilità"]
                 }
-            ]
+            ],
+            gtm_section: {
+                badge: "PROGRAMMI DI CRESCITA PER I FORNITORI",
+                title: "IA Go-to-Market — 360º",
+                btn: "Voglio risultati con l'IA",
+                cards: [
+                    {
+                        title: "Profilo verificato + ABM",
+                        items: ["Pubblicazione nella rete CONECTIAN", "Segmentazione per settore/paese", "Messaggi per caso verificato"]
+                    },
+                    {
+                        title: "PR & Fiducia",
+                        items: ["Case story (senza dati sensibili)", "Webinar con cliente (se applicabile)", "Badge 'Verified by CONECTIAN'"]
+                    },
+                    {
+                        title: "Sales Enablement",
+                        items: ["One-pagers per caso", "Calcolatori ROI", "Playbook delle obiezioni"]
+                    }
+                ]
+            }
         },
         use_cases: {
-            badge: "Per Aziende",
-            title: "Trova la tua soluzione",
-            desc: "Trova la soluzione ideale tra centinaia di casi di successo verificati della nostra rete di partner. Non reinventiamo la ruota: ti connettiamo con ciò che funziona già.",
+            badge: "CASI DI SUCCESSO REALI",
+            title: "Problemi che abbiamo già risolto",
+            desc: "Questi sono casi reali in cui l'IA ha già dimostrato il suo valore.",
             footer_title: "Non trovi il tuo caso specifico?",
             footer_desc: "Il nostro team di esperti può analizzare il tuo problema e proporre soluzioni già collaudate.",
             footer_btn: "Richiedi Audit Gratuito",
@@ -868,15 +988,27 @@ export const translations = {
                 { title: "Prioritizzazione lead con IA", category: "VENDITE", metrics: ["+50% di conversione", "Team focalizzato su opportunità reali"] },
                 { title: "Analisi contratti con IA", category: "LEGALE", metrics: ["Da minuti a secondi per clausola", "Avvisi automatici di rischio"] },
                 { title: "Automazione processi", category: "OPERAZIONI", metrics: ["+30% produttività", "Meno errori umani"] },
-                { title: "Previsione della domanda", category: "LOGISTICA", metrics: ["Stock ottimizzato automaticamente", "Meno rotture di stock, meno eccessi"] }
-            ]
+                { title: "Previsione della demanda", category: "LOGISTICA", metrics: ["Stock ottimizzato automaticamente", "Meno rotture di stock, meno eccessi"] }
+            ],
+            stats: [
+                { value: "150+", label: "Casi di successo implementati" },
+                { value: "95%", label: "Clienti soddisfatti dei risultati" },
+                { value: "< 6 mesi", label: "Tempo medio per ROI positivo" }
+            ],
+            how_we_work: {
+                badge: "COME LAVORIAMO",
+                title: "Due strade per il successo",
+                desc: "Per le aziende che cercano soluzioni collaudate e per i partner que vogliono scalare.",
+                btn_enterprise: "Se hai un problema",
+                btn_partner: "Se sei un fornitore di IA"
+            }
         },
         value_prop: {
             badge: "Il Nostro Metodo",
             title_part1: "Applichiamo ciò che ",
             title_part2: "funziona già",
             desc: "La nostra metodologia è progettata per eliminare il rischio nell'adozione dell'IA. Ci concentriamo su risultati tangibili e misurabili che impattano direttamente sul tuo bilancio.",
-            pay_per_results_title: "Modello 'Pay per Results'",
+            pay_per_results_title: "Modello di 'Pagamento per Risultati'",
             pay_per_results_desc: "Siamo gli unici a vincolare il pagamento dell'implementazione al raggiungimento delle metriche di ritorno sull'investimento (ROI) concordate.",
             steps: [
                 { label: "1. RACCONTACI IL TUO PROBLEMA", title: "Ascoltiamo", desc: "Identifichiamo le attività ripetitive e i colli di bottiglia che frenano la tua crescita. Capiamo il tuo business prima di proporre tecnologia." },
@@ -893,7 +1025,7 @@ export const translations = {
             strategic_desc: "Sessioni periodiche per allineare la tecnologia ai tuoi obiettivi aziendali.",
             security_title: "Sicurezza Enterprise",
             security_desc: "Infrastruttura blindata e conformità normativa garantita da contratto.",
-            btn: "Richiedi consulenza gratuita",
+            btn: "Trova soluzioni",
             stages: [
                 { title: "Pilot Sprint", duration: "4-6 settimane", desc: "Validiamo tecnicamente il caso d'uso con i tuoi dati prima di scalare.", items: ["Proof of Concept (PoC)", "Validazione metriche", "Calcolo ROI reale"] },
                 { title: "Adozione IA", duration: "Continuo", desc: "Integriamo la soluzione nei tuoi flussi di lavoro e formiamo il tuo team.", items: ["Integrazione via API/CRM", "Formazione utenti", "Supporto tecnico dedicato"] },
@@ -948,9 +1080,9 @@ export const translations = {
             inicio: "Startseite",
             casos: "Erfolgsgeschichten",
             metodo: "Unsere Methode",
-            partners: "Partner",
+            partners: "Für Partner",
             faq: "FAQ",
-            empresas: "Unternehmen",
+            empresas: "Für Unternehmen",
             cta: "Jetzt starten",
             demo: "Experten sprechen",
             acceso: "Kunden-Login"
@@ -980,7 +1112,8 @@ export const translations = {
                 metric1_label: "Rechnungsverarbeitung",
                 metric2_val: "+50% Umsatz",
                 metric2_label: "KI-priorisierte Leads"
-            }
+            },
+            trust_bar: ["Verifizierte Erfolgsgeschichten", "Bewährte KI-Lösungen", "Garantierte Ergebnisse"]
         },
         business: {
             title: "Finden Sie die KI-Lösung für Ihr Unternehmen",
@@ -1056,6 +1189,7 @@ export const translations = {
             success: "Erfolgreich gesendet!",
             error: "Fehler beim Senden der Informationen.",
             thank_you: "Danke! Wir werden Ihre Informationen prüfen.",
+            onboarding_title: "Onboarding in 4 einfachen Schritten",
             field_select_placeholder: "Auswählen...",
             options_level: ["Bronze", "Silber", "Gold"],
             options_closure: ["2-4 Wochen", "4-8 Wochen", "8-12 Wochen", "12+ Wochen"],
@@ -1086,15 +1220,34 @@ export const translations = {
                 },
                 {
                     title: "Verifizierte Veröffentlichung",
-                    desc: "Ihr Profil erscheint als 'Verified Partner' mit einem Vertrauenssiegel für Unternehmen.",
+                    desc: "Ihr profil erscheint als 'Verified Partner' mit einem Vertrauenssiegel für Unternehmen.",
                     tags: ["KI-Siegel", "Lead Gen", "Sichtbarkeit"]
                 }
-            ]
+            ],
+            gtm_section: {
+                badge: "WACHSTUMSPROGRAMME FÜR ANBIETER",
+                title: "KI Go-to-Market — 360º",
+                btn: "Ich will Ergebnisse mit KI",
+                cards: [
+                    {
+                        title: "Verifiziertes Profil + ABM",
+                        items: ["Veröffentlichung im CONECTIAN-Netzwerk", "Segmentierung nach Sektor/Land", "Nachrichten nach verifiziertem Fall"]
+                    },
+                    {
+                        title: "PR & Vertrauen",
+                        items: ["Fallbeispiel (ohne sensible Daten)", "Webinare mit Kunden (falls zutreffend)", "Badge 'Verified by CONECTIAN'"]
+                    },
+                    {
+                        title: "Sales Enablement",
+                        items: ["One-Pager pro Fall", "ROI-Rechner", "Einwand-Playbook"]
+                    }
+                ]
+            }
         },
         use_cases: {
-            badge: "Für Unternehmen",
-            title: "Finden Sie Ihre Lösung",
-            desc: "Finden Sie die ideale Lösung unter hunderten verifizierten Erfolgsgeschichten unseres Partnernetzwerks. Wir erfinden das Rad nicht neu: Wir verbinden Sie mit dem, was bereits funktioniert.",
+            badge: "ECHTE ERFOLGSGESCHICHTEN",
+            title: "Bereits gelöste Probleme",
+            desc: "Dies sind echte Fälle, in denen KI ihren Wert bereits bewiesen hat.",
             footer_title: "Finden Sie Ihren spezifischen Fall nicht?",
             footer_desc: "Unser Expertenteam kann Ihr Problem analysieren und bereits bewährte Lösungen vorschlagen.",
             footer_btn: "Kostenloses Audit anfordern",
@@ -1105,14 +1258,26 @@ export const translations = {
                 { title: "Vertragsanalyse mit KI", category: "RECHT", metrics: ["Von Minuten zu Sekunden pro Klausel", "Automatische Risikowarnungen"] },
                 { title: "Prozessautomatisierung", category: "OPERATIONS", metrics: ["+30% Produktivität", "Weniger menschliche Fehler"] },
                 { title: "Nachfragevorhersage", category: "LOGISTIK", metrics: ["Bestand automatisch optimiert", "Weniger Fehlbestände, weniger Überschuss"] }
-            ]
+            ],
+            stats: [
+                { value: "150+", label: "Implementierte Erfolgsgeschichten" },
+                { value: "95%", label: "Zufriedene Kunden mit Ergebnissen" },
+                { value: "< 6 Monate", label: "Durchschnittliche Zeit bis zum positiven ROI" }
+            ],
+            how_we_work: {
+                badge: "WIE WIR ARBEITEN",
+                title: "Zwei Wege zum Erfolg",
+                desc: "Für Unternehmen, die nach bewährten Lösungen suchen, und für Partner, die wachsen wollen.",
+                btn_enterprise: "Wenn Sie ein Problem haben",
+                btn_partner: "Wenn Sie ein KI-Anbieter sind"
+            }
         },
         value_prop: {
             badge: "Unsere Methode",
             title_part1: "Wir wenden an, was ",
             title_part2: "bereits funktioniert",
             desc: "Unsere Methodik ist darauf ausgelegt, das Risiko der KI-Einführung zu eliminieren. Wir konzentrieren uns auf greifbare und messbare Ergebnisse, die sich direkt auf Ihr Geschäftsergebnis auswirken.",
-            pay_per_results_title: "'Pay per Results'-Modell",
+            pay_per_results_title: "Modell: 'Bezahlung nach Ergebnissen'",
             pay_per_results_desc: "Wir sind die Einzigen, die die Bezahlung der Implementierung an das Erreichen der vereinbarten ROI-Kennzahlen knüpfen.",
             steps: [
                 { label: "1. ERZÄHLEN SIE UNS IHR PROBLEM", title: "Wir hören zu", desc: "Wir identifizieren repetitive Aufgaben und Engpässe, die Ihr Wachstum bremsen. Wir verstehen Ihr Geschäft, bevor wir Technologie vorschlagen." },
@@ -1129,7 +1294,7 @@ export const translations = {
             strategic_desc: "Regelmäßige Sitzungen, um die Technologie mit Ihren Geschäftszielen abzustimmen.",
             security_title: "Enterprise-Sicherheit",
             security_desc: "Gepanzerte Infrastruktur und vertraglich garantierte Compliance.",
-            btn: "Kostenlose Beratung anfordern",
+            btn: "Lösungen finden",
             stages: [
                 { title: "Pilot Sprint", duration: "4-6 Wochen", desc: "Wir validieren den Anwendungsfall technisch mit Ihren eigenen Daten vor der Skalierung.", items: ["Proof of Concept (PoC)", "Metrik-Validierung", "Berechnung des echten ROI"] },
                 { title: "KI-Einführung", duration: "Fortlaufend", desc: "Wir integrieren die Lösung in Ihre Arbeitsabläufe und schulen Ihr Team.", items: ["Integration via API/CRM", "Nutzerschulung", "Dedizierter technischer Support"] },
@@ -1184,9 +1349,9 @@ export const translations = {
             inicio: "ホーム",
             casos: "導入事例",
             metodo: "私たちのメソッド",
-            partners: "パートナー",
+            partners: "パートナーの方へ",
             faq: "よくある質問",
-            empresas: "企業向け",
+            empresas: "企業の方へ",
             cta: "今すぐ始める",
             demo: "専門家に相談",
             acceso: "クライアントログイン"
@@ -1216,7 +1381,8 @@ export const translations = {
                 metric1_label: "請求書処理",
                 metric2_val: "+50% 売上",
                 metric2_label: "AIによるリード優先順位付け"
-            }
+            },
+            trust_bar: ["検証済みの成功事例", "実績のあるAIソリューション", "保証された結果"]
         },
         business: {
             title: "ビジネスのためのAIソリューションを見つける",
@@ -1292,6 +1458,7 @@ export const translations = {
             success: "送信に成功しました！",
             error: "情報の送信中にエラーが発生しました。",
             thank_you: "ありがとうございます。情報を確認させていただきます。",
+            onboarding_title: "4つの簡単なステップでオンボーディング",
             field_select_placeholder: "選択してください...",
             options_level: ["ブロンズ", "シルバー", "ゴールド"],
             options_closure: ["2-4週間", "4-8週間", "8-12週間", "12週間以上"],
@@ -1325,12 +1492,31 @@ export const translations = {
                     desc: "あなたのプロフィールは、企業向けの信頼シール付きの「Verified Partner」として表示されます。",
                     tags: ["AIシール", "リード獲得", "可視性"]
                 }
-            ]
+            ],
+            gtm_section: {
+                badge: "プロバイダー向け成長プログラム",
+                title: "AI Go-to-Market — 360º",
+                btn: "AIで結果を出したい",
+                cards: [
+                    {
+                        title: "検証済みプロフィール + ABM",
+                        items: ["CONECTIANネットワークへの掲載", "業界/国別のセグメンテーション", "検証済み事例に基づくメッセージング"]
+                    },
+                    {
+                        title: "PRと信頼",
+                        items: ["ケースストーリー（機密データなし）", "クライアントとのウェビナー（可能な場合）", "「Verified by CONECTIAN」バッジ"]
+                    },
+                    {
+                        title: "セールスイネーブルメント",
+                        items: ["事例ごとのワンペーパー", "ROI計算機", "反対対応プレイブック"]
+                    }
+                ]
+            }
         },
         use_cases: {
-            badge: "企業向け",
-            title: "ソリューションを見つける",
-            desc: "パートナーネットワークの数百の検証済み成功事例の中から理想的なソリューションを見つけてください。車輪の再発明はしません：すでに機能するものとあなたをつなぎます。",
+            badge: "実証済みの成功事例",
+            title: "すでに解決した課題",
+            desc: "これらは、AIがすでにその価値を証明した実際の事例です。",
             footer_title: "特定のケースが見つかりませんか？",
             footer_desc: "私たちの専門家チームがあなたの問題を分析し、すでに実証されたソリューションを提案します。",
             footer_btn: "無料監査を依頼する",
@@ -1341,7 +1527,19 @@ export const translations = {
                 { title: "AIによる契約分析", category: "法務", metrics: ["条項あたり数分から数秒へ", "リスク自動アラート"] },
                 { title: "プロセス自動化", category: "オペレーション", metrics: ["生産性+30%", "ヒューマンエラー削減"] },
                 { title: "需要予測", category: "物流", metrics: ["在庫の自動最適化", "欠品削減、過剰在庫削減"] }
-            ]
+            ],
+            stats: [
+                { value: "150+", label: "導入済みの成功事例" },
+                { value: "95%", label: "結果に満足しているクライアント" },
+                { value: "6ヶ月未満", label: "平均ROI達成期間" }
+            ],
+            how_we_work: {
+                badge: "私たちの働き方",
+                title: "成功への2つの道",
+                desc: "実証済みのソリューションを探している企業と、成長を目指すパートナーのために。",
+                btn_enterprise: "課題をお持ちの方",
+                btn_partner: "AIプロバイダーの方"
+            }
         },
         value_prop: {
             badge: "私たちのメソッド",
@@ -1365,7 +1563,7 @@ export const translations = {
             strategic_desc: "技術をビジネス目標に合わせるための定期的なセッション。",
             security_title: "エンタープライズセキュリティ",
             security_desc: "強固なインフラストラクチャと契約で保証されたコンプライアンス。",
-            btn: "無料相談を申し込む",
+            btn: "ソリューションを見つける",
             stages: [
                 { title: "パイロットスプリント", duration: "4-6週間", desc: "スケーリングする前に、あなた自身のデータでユースケースを技術的に検証します。", items: ["概念実証（PoC）", "指標の検証", "実際のROI計算"] },
                 { title: "AI導入", duration: "継続的", desc: "ソリューションをワークフローに統合し、チームをトレーニングします。", items: ["API/CRM統合", "ユーザートレーニング", "専用テクニカルサポート"] },
@@ -1420,9 +1618,9 @@ export const translations = {
             inicio: "首页",
             casos: "成功案例",
             metodo: "我们的方法",
-            partners: "合作伙伴",
+            partners: "面向合作伙伴",
             faq: "常见问题",
-            empresas: "企业服务",
+            empresas: "面向企业",
             cta: "立即开始",
             demo: "咨询专家",
             acceso: "客户登录"
@@ -1452,7 +1650,8 @@ export const translations = {
                 metric1_label: "发票处理",
                 metric2_val: "+50% 销售",
                 metric2_label: "AI 优先处理线索"
-            }
+            },
+            trust_bar: ["经验证的成功案例", "成熟的 AI 解决方案", "保证成果"]
         },
         business: {
             title: "为您的企业寻找 AI 解决方案",
@@ -1528,6 +1727,7 @@ export const translations = {
             success: "成功发送！",
             error: "发送信息时出错。",
             thank_you: "谢谢！我们将核实您提供的信息。",
+            onboarding_title: "只需 4 个简单步骤即可入驻",
             field_select_placeholder: "请选择...",
             options_level: ["铜级", "银级", "金级"],
             options_closure: ["2-4 周", "4-8 周", "8-12 周", "12+ 周"],
@@ -1561,12 +1761,31 @@ export const translations = {
                     desc: "您的档案将显示为带有企业信任印章的“Verified Partner”。",
                     tags: ["AI 印章", "线索生成", "曝光度"]
                 }
-            ]
+            ],
+            gtm_section: {
+                badge: "合作伙伴增长计划",
+                title: "AI Go-to-Market — 360º",
+                btn: "我想要 AI 成果",
+                cards: [
+                    {
+                        title: "已验证档案 + ABM",
+                        items: ["在 CONECTIAN 网络中发布", "按行业/国家细分", "基于验证案例的消息推送"]
+                    },
+                    {
+                        title: "公关与信任",
+                        items: ["案例故事（不含敏感数据）", "客户网络研讨会（如适用）", "‘Verified by CONECTIAN’ 徽章"]
+                    },
+                    {
+                        title: "销售赋能",
+                        items: ["单页案例介绍", "ROI 计算器", "异议处理手册"]
+                    }
+                ]
+            }
         },
         use_cases: {
-            badge: "企业服务",
-            title: "寻找您的解决方案",
-            desc: "在我们合作伙伴网络的数百个已验证成功案例中寻找理想的解决方案。我们不重复造轮子：我们将您与已经行之有效的方案连接起来。",
+            badge: "真实成功案例",
+            title: "我们已经解决的问题",
+            desc: "这些是人工智能已经证明其价值的真实案例。",
             footer_title: "找不到您的具体案例？",
             footer_desc: "我们的专家团队可以分析您的问题并提出经过验证的解决方案。",
             footer_btn: "申请免费审计",
@@ -1577,7 +1796,19 @@ export const translations = {
                 { title: "AI 合同分析", category: "法律", metrics: ["每条款从几分钟降至几秒", "自动风险预警"] },
                 { title: "流程自动化", category: "运营", metrics: ["+30% 生产力", "减少人为错误"] },
                 { title: "需求预测", category: "物流", metrics: ["自动优化库存", "减少缺货，减少积压"] }
-            ]
+            ],
+            stats: [
+                { value: "150+", label: "已实施的成功案例" },
+                { value: "95%", label: "对结果满意的客户" },
+                { value: "< 6 个月", label: "平均实现正 ROI 的时间" }
+            ],
+            how_we_work: {
+                badge: "我们的工作方式",
+                title: "成功的两条路径",
+                desc: "面向寻找成熟解决方案的企业和希望扩展业务的合作伙伴。",
+                btn_enterprise: "如果您有问题",
+                btn_partner: "如果您是 AI 供应商"
+            }
         },
         value_prop: {
             badge: "我们的方法",
@@ -1601,7 +1832,7 @@ export const translations = {
             strategic_desc: "定期会议，使技术与您的业务目标保持一致。",
             security_title: "企业级安全",
             security_desc: "坚固的基础设施和合同保证的合规性。",
-            btn: "申请免费咨询",
+            btn: "寻找解决方案",
             stages: [
                 { title: "试点冲刺", duration: "4-6 周", desc: "在扩展之前，我们使用您自己的数据对用例进行技术验证。", items: ["概念验证 (PoC)", "指标验证", "真实 ROI 计算"] },
                 { title: "AI 采用", duration: "持续", desc: "我们将解决方案集成到您的工作流中并培训您的团队。", items: ["API/CRM 集成", "用户培训", "专门技术支持"] },

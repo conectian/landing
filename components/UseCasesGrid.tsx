@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Receipt, Headset, TrendingUp, FileText, Zap, BarChart3 } from "lucide-react";
+import { Award, BarChart3, FileText, Headset, Receipt, TrendingUp, Zap, Building2, UserCircle } from "lucide-react";
 import Link from "next/link";
 
 const successCases = [
@@ -94,7 +94,7 @@ export default function UseCasesGrid({ onOpenWhitelist }: UseCasesGridProps) {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
-                    <span className="badge-ai">{t.use_cases.badge}</span>
+                    <span className="badge-ai"><Award className="w-4 h-4 text-[var(--ai-primary)] mr-2" />{t.use_cases.badge}</span>
                 </motion.div>
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
@@ -149,6 +149,28 @@ export default function UseCasesGrid({ onOpenWhitelist }: UseCasesGridProps) {
                 ))}
             </div>
 
+
+            {/* Local Stats Section */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                {t.use_cases.stats.map((stat: any, index: number) => (
+                    <motion.div
+                        key={index}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.1 }}
+                        className="p-8 rounded-[2rem] bg-white border border-[var(--slate-100)] shadow-sm text-center group hover:shadow-md transition-all duration-300"
+                    >
+                        <div className="text-4xl lg:text-5xl font-black text-[var(--slate-800)] mb-2 tracking-tight group-hover:text-[var(--ai-primary)] transition-colors">
+                            {stat.value}
+                        </div>
+                        <p className="text-sm font-medium text-[var(--slate-500)] leading-relaxed">
+                            {stat.label}
+                        </p>
+                    </motion.div>
+                ))}
+            </div>
+
             {/* Bottom Info */}
             <motion.div
                 initial={{ opacity: 0 }}
@@ -167,6 +189,71 @@ export default function UseCasesGrid({ onOpenWhitelist }: UseCasesGridProps) {
                     {t.use_cases.footer_btn}
                 </Link>
             </motion.div>
+
+            {/* How We Work Section */}
+            <div className="mt-24 pt-24 border-t border-[var(--slate-100)]">
+                <div className="text-center max-w-3xl mx-auto mb-16">
+                    <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                    >
+                        <span className="badge-ai">{t.use_cases.how_we_work.badge}</span>
+                    </motion.div>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="text-3xl lg:text-5xl font-bold mb-6"
+                    >
+                        {t.use_cases.how_we_work.title}
+                    </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="text-lg text-[var(--slate-500)]"
+                    >
+                        {t.use_cases.how_we_work.desc}
+                    </motion.p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-8">
+                    <Link href="#empresas" className="flex">
+                        <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="card-ai group cursor-pointer border-2 hover:border-[var(--ai-primary)] flex items-center gap-6 p-10 w-full"
+                        >
+                            <div className="w-16 h-16 rounded-2xl bg-indigo-50 flex items-center justify-center text-[var(--ai-primary)] flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <Building2 className="w-8 h-8" />
+                            </div>
+                            <div>
+                                <h3 className="text-2xl font-bold group-hover:text-[var(--ai-primary)] transition-colors">{t.use_cases.how_we_work.btn_enterprise}</h3>
+                            </div>
+                        </motion.div>
+                    </Link>
+
+                    <Link href="#partners" className="flex">
+                        <motion.div
+                            initial={{ opacity: 0, x: 20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="card-ai group cursor-pointer border-2 hover:border-purple-500 flex items-center gap-6 p-10 w-full"
+                        >
+                            <div className="w-16 h-16 rounded-2xl bg-purple-50 flex items-center justify-center text-purple-600 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <UserCircle className="w-8 h-8" />
+                            </div>
+                            <div>
+                                <h3 className="text-2xl font-bold group-hover:text-purple-600 transition-colors">{t.use_cases.how_we_work.btn_partner}</h3>
+                            </div>
+                        </motion.div>
+                    </Link>
+                </div>
+            </div>
         </section>
     );
 }

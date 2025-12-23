@@ -83,7 +83,7 @@ export default function Header({ onOpenWhitelist }: HeaderProps) {
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden lg:flex items-center gap-10">
+                    {/* <div className="hidden lg:flex items-center gap-10">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.name}
@@ -94,7 +94,7 @@ export default function Header({ onOpenWhitelist }: HeaderProps) {
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--ai-primary)] transition-all duration-300 group-hover:w-full"></span>
                             </Link>
                         ))}
-                    </div>
+                    </div> */}
 
                     {/* Desktop CTAs */}
                     <div className="hidden lg:flex items-center gap-3">
@@ -170,7 +170,7 @@ export default function Header({ onOpenWhitelist }: HeaderProps) {
                     }`}
             >
                 <div className="h-full flex flex-col p-8 pt-24 overflow-y-auto">
-                    <div className="flex flex-col gap-6 mb-12">
+                    {/* <div className="flex flex-col gap-6 mb-12">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.name}
@@ -181,12 +181,12 @@ export default function Header({ onOpenWhitelist }: HeaderProps) {
                                 {link.name}
                             </Link>
                         ))}
-                    </div>
+                    </div> */}
 
                     <div className="flex flex-col gap-4 mt-auto">
                         <Link
                             href="/business"
-                            className="bg-[var(--slate-50)] text-[var(--slate-900)] font-bold py-4 rounded-2xl flex items-center justify-center border border-[var(--slate-100)] text-lg"
+                            className="btn-ai btn-ai-secondary w-full text-center"
                             onClick={() => setMobileMenuOpen(false)}
                         >
                             {t.nav.empresas}

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Send, CheckCircle2 } from "lucide-react";
+import { X, Send, CheckCircle2, Award } from "lucide-react";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
@@ -18,8 +18,7 @@ export default function WhitelistModal({ isOpen, onClose }: WhitelistModalProps)
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
         name: "",
-        email: "",
-        message: ""
+        email: ""
     });
 
     const handleClose = () => {
@@ -27,7 +26,7 @@ export default function WhitelistModal({ isOpen, onClose }: WhitelistModalProps)
         // Reset state after animation
         setTimeout(() => {
             setStep("form");
-            setFormData({ name: "", email: "", message: "" });
+            setFormData({ name: "", email: "" });
         }, 300);
     };
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -37,7 +36,6 @@ export default function WhitelistModal({ isOpen, onClose }: WhitelistModalProps)
         const templateParams = {
             name: formData.name,
             email: formData.email,
-            message: formData.message,
             time: new Date().toLocaleString(),
             title: "Nueva solicitud de Whitelist",
         };
@@ -89,13 +87,13 @@ export default function WhitelistModal({ isOpen, onClose }: WhitelistModalProps)
                         {step === "form" ? (
                             <>
                                 <div className="mb-8">
-                                    <span className="badge-ai mb-4">{t.whitelist.badge}</span>
-                                    <h2 className="text-3xl font-bold text-[var(--slate-900)] leading-tight">
+                                    <h2 className="text-3xl font-bold text-[var(--slate-900)] leading-tight mb-4">
                                         {t.whitelist.title_part1} <br /> <span className="text-[var(--ai-primary)]">{t.whitelist.title_part2}</span>
                                     </h2>
-                                    <p className="mt-4 text-[var(--slate-500)]">
-                                        {t.whitelist.description}
-                                    </p>
+                                    <span className="badge-ai gap-2 py-1.5 px-4 inline-flex items-center">
+                                        <Award className="w-4 h-4" />
+                                        {t.whitelist.badge}
+                                    </span>
                                 </div>
 
                                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -119,17 +117,6 @@ export default function WhitelistModal({ isOpen, onClose }: WhitelistModalProps)
                                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                             placeholder={t.whitelist.email_placeholder}
                                             className="w-full px-5 py-4 rounded-2xl border border-[var(--slate-100)] bg-[var(--slate-50)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--ai-primary)]/20 focus:border-[var(--ai-primary)] font-medium transition-all"
-                                        />
-                                    </div>
-                                    <div>
-                                        <label className="block text-sm font-bold text-[var(--slate-700)] mb-2 px-1">{t.whitelist.message_label}</label>
-                                        <textarea
-                                            required
-                                            rows={3}
-                                            value={formData.message}
-                                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                            placeholder={t.whitelist.message_placeholder}
-                                            className="w-full px-5 py-4 rounded-2xl border border-[var(--slate-100)] bg-[var(--slate-50)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--ai-primary)]/20 focus:border-[var(--ai-primary)] font-medium transition-all resize-none"
                                         />
                                     </div>
 

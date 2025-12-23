@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheck, ArrowRight, Sparkles, Building2, Globe, Clock, Zap, Cpu, Layers, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, ArrowRight, Sparkles, Building2, Globe, Clock, Zap, Cpu, Layers, CheckCircle2, Target } from "lucide-react";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { useLanguage } from "@/context/LanguageContext";
@@ -126,28 +126,6 @@ Horizonte cierre: ${formData.closingHorizon}
                 </p>
             </motion.div>
 
-            {/* Steps Info */}
-            <div className="grid md:grid-cols-4 gap-4 mb-16 text-left">
-                {[
-                    { title: labels.step1, items: labels.step1_items },
-                    { title: labels.step2, items: labels.step2_items },
-                    { title: labels.step3, items: labels.step3_items },
-                    { title: labels.step4, items: labels.step4_items }
-                ].map((step, i) => (
-                    <div key={i} className="p-6 rounded-2xl bg-white border border-[var(--slate-200)] shadow-sm">
-                        <h4 className="text-xs font-black text-[var(--slate-900)] mb-4 uppercase tracking-wider">{step.title}</h4>
-                        <ul className="space-y-2">
-                            {step.items.map((item, j) => (
-                                <li key={j} className="text-xs text-[var(--slate-500)] flex items-center gap-2">
-                                    <div className="w-1 h-1 rounded-full bg-[var(--ai-primary)]" />
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                ))}
-            </div>
-
             {/* Form */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -156,6 +134,31 @@ Horizonte cierre: ${formData.closingHorizon}
                 transition={{ delay: 0.2 }}
                 className="p-8 md:p-12 rounded-[2.5rem] bg-white border border-[var(--slate-200)] shadow-xl relative overflow-hidden"
             >
+                {/* Onboarding Steps Header */}
+                <div className="mb-12">
+                    <h3 className="text-sm font-black text-[var(--ai-primary)] mb-6 uppercase tracking-widest text-center">{labels.onboarding_title}</h3>
+                    <div className="grid md:grid-cols-4 gap-4 text-left">
+                        {[
+                            { title: labels.step1, items: labels.step1_items },
+                            { title: labels.step2, items: labels.step2_items },
+                            { title: labels.step3, items: labels.step3_items },
+                            { title: labels.step4, items: labels.step4_items }
+                        ].map((step, i) => (
+                            <div key={i} className="p-5 rounded-2xl bg-[var(--slate-50)] border border-[var(--slate-100)] shadow-sm">
+                                <h4 className="text-[10px] font-black text-[var(--slate-900)] mb-3 uppercase tracking-wider">{step.title}</h4>
+                                <ul className="space-y-1.5">
+                                    {step.items.map((item, j) => (
+                                        <li key={j} className="text-[10px] text-[var(--slate-500)] flex items-center gap-2">
+                                            <div className="w-1 h-1 rounded-full bg-[var(--ai-primary)]/40" />
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
                 {/* Progress Bar when loading */}
                 {status === 'loading' && (
                     <div className="absolute top-0 left-0 h-1 bg-[var(--ai-primary)] animate-shimmer w-full" />
@@ -301,6 +304,46 @@ Horizonte cierre: ${formData.closingHorizon}
                     </div>
                 </form>
             </motion.div>
+
+            {/* GTM Section - Simple & Integrated */}
+            <div className="p-8 md:p-12 rounded-[2.5rem] bg-white border border-[var(--slate-200)] shadow-xl relative overflow-hidden mt-8">
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+                    <div className="max-w-2xl">
+                        <span className="text-[14px] font-black text-[var(--ai-primary)] uppercase tracking-[0.2em] flex items-center mb-3">
+                            <Target className="w-3.5 h-3.5 mr-2" />
+                            {labels.gtm_section.badge}
+                        </span>
+                        <h3 className="text-2xl md:text-3xl font-bold text-[var(--slate-900)] tracking-tight">
+                            {labels.gtm_section.title}
+                        </h3>
+                    </div>
+                    <button
+                        onClick={onOpenWhitelist}
+                        className="btn-ai btn-ai-primary !py-3 !px-6 text-sm"
+                    >
+                        {labels.gtm_section.btn}
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                    </button>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-6">
+                    {labels.gtm_section.cards.map((card, i) => (
+                        <div key={i} className="card-ai !p-6 border-[var(--slate-100)]">
+                            <h4 className="text-xs font-black text-[var(--slate-900)] mb-4 uppercase tracking-wider">
+                                {card.title}
+                            </h4>
+                            <ul className="space-y-3">
+                                {card.items.map((item, j) => (
+                                    <li key={j} className="text-xs text-[var(--slate-500)] flex items-start gap-3">
+                                        <CheckCircle2 className="w-3.5 h-3.5 text-[var(--ai-primary)]/60 mt-0.5 shrink-0" />
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </section>
     );
 }

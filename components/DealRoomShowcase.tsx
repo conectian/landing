@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Rocket, GraduationCap, BarChart3, ArrowRight, CheckCircle2 } from "lucide-react";
+import Link from "next/link";
 
 const adoptionStages = [
     {
@@ -108,13 +109,13 @@ export default function DealRoomShowcase({ onOpenWhitelist }: DealRoomShowcasePr
                         transition={{ delay: 0.3 }}
                         className="mt-12"
                     >
-                        <button
-                            onClick={onOpenWhitelist}
+                        <Link
+                            href="/business"
                             className="btn-ai btn-ai-primary"
                         >
                             {t.deal_room.btn}
                             <ArrowRight className="w-4 h-4" />
-                        </button>
+                        </Link>
                     </motion.div>
                 </div>
 

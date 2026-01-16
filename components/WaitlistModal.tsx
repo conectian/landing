@@ -38,6 +38,7 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
             email: formData.email,
             time: new Date().toLocaleString(),
             title: "Nueva solicitud de Waitlist",
+            message: `Nuevo contacto waitlist.\nNombre: ${formData.name}\nCorreo: ${formData.email}`
         };
 
         try {

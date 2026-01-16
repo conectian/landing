@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
 
     const { data, error } = await resend.emails.send({
       from: 'Conectian <waitlist@conectian.com>', 
-      to: ['info@conectian.com', 'rafaeloriolorticarrio@gmail.com'],
+      to: ['info@conectian.com', 'rafaeloriolorticarrio@gmail.com', 'pharoortega@gmail.com'],
       subject: 'Nueva solicitud de Waitlist',
       html: `
         <div style="font-family: system-ui, sans-serif, Arial; font-size: 14px; color: #334155; line-height: 1.5;">

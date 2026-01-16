@@ -8,8 +8,8 @@ export async function POST(req: NextRequest) {
     const { name, email, time, message } = await req.json();
 
     const { data, error } = await resend.emails.send({
-      from: 'Conectian <onboarding@resend.dev>', // You should update this to your verified domain
-      to: ['info@conectian.com'],
+      from: 'Conectian <waitlist@conectian.com>', 
+      to: ['info@conectian.com', 'rafaeloriolorticarrio@gmail.com'],
       subject: 'Nueva solicitud de Waitlist',
       html: `
         <div style="font-family: system-ui, sans-serif, Arial; font-size: 14px; color: #334155; line-height: 1.5;">

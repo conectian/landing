@@ -2,19 +2,19 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WhitelistModal from "@/components/WhitelistModal";
+import WaitlistModal from "@/components/WaitlistModal";
 import { useState } from "react";
 import { Cookie, Info, Settings, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function CookiesPage() {
-    const [isWhitelistOpen, setIsWhitelistOpen] = useState(false);
-    const openWhitelist = () => setIsWhitelistOpen(true);
-    const closeWhitelist = () => setIsWhitelistOpen(false);
+    const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
+    const openWaitlist = () => setIsWaitlistOpen(true);
+    const closeWaitlist = () => setIsWaitlistOpen(false);
 
     return (
         <div className="min-h-screen bg-white">
-            <Header onOpenWhitelist={openWhitelist} />
+            <Header onOpenWaitlist={openWaitlist} />
 
             <main className="pt-32 pb-20">
                 <div className="section-container max-w-4xl">
@@ -89,8 +89,8 @@ export default function CookiesPage() {
                 </div>
             </main>
 
-            <Footer onOpenWhitelist={openWhitelist} />
-            <WhitelistModal isOpen={isWhitelistOpen} onClose={closeWhitelist} />
+            <Footer onOpenWaitlist={openWaitlist} />
+            <WaitlistModal isOpen={isWaitlistOpen} onClose={closeWaitlist} />
         </div>
     );
 }

@@ -7,10 +7,10 @@ import emailjs from "@emailjs/browser";
 import { useLanguage } from "@/context/LanguageContext";
 
 interface PartnerFormProps {
-    onOpenWhitelist?: () => void;
+    onOpenWaitlist?: () => void;
 }
 
-export default function PartnerForm({ onOpenWhitelist }: PartnerFormProps) {
+export default function PartnerForm({ onOpenWaitlist }: PartnerFormProps) {
     const { t, language } = useLanguage();
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
@@ -39,7 +39,7 @@ export default function PartnerForm({ onOpenWhitelist }: PartnerFormProps) {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        onOpenWhitelist?.();
+        onOpenWaitlist?.();
     };
 
     const labels = t.partners;
@@ -194,7 +194,7 @@ export default function PartnerForm({ onOpenWhitelist }: PartnerFormProps) {
                         <div className="flex items-center gap-4">
                             <button
                                 type="button"
-                                onClick={onOpenWhitelist}
+                                onClick={onOpenWaitlist}
                                 className="btn-ai btn-ai-primary group px-10 w-full sm:w-auto"
                             >
                                 {labels.btn_send}
@@ -243,7 +243,7 @@ export default function PartnerForm({ onOpenWhitelist }: PartnerFormProps) {
                         </h3>
                     </div>
                     <button
-                        onClick={onOpenWhitelist}
+                        onClick={onOpenWaitlist}
                         className="btn-ai btn-ai-primary !py-3 !px-6 text-sm"
                     >
                         {labels.gtm_section.btn}

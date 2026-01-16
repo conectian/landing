@@ -24,12 +24,12 @@ const faqs = [
 ];
 
 interface FAQSectionProps {
-    onOpenWhitelist: () => void;
+    onOpenWaitlist: () => void;
 }
 
 import { useLanguage } from "@/context/LanguageContext";
 
-export default function FAQSection({ onOpenWhitelist }: FAQSectionProps) {
+export default function FAQSection({ onOpenWaitlist }: FAQSectionProps) {
     const { t } = useLanguage();
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -88,7 +88,7 @@ export default function FAQSection({ onOpenWhitelist }: FAQSectionProps) {
                     <h3 className="text-xl font-bold mb-3">{t.faq.footer_title}</h3>
                     <p className="text-[var(--slate-500)] mb-6">{t.faq.footer_desc}</p>
                     <button
-                        onClick={onOpenWhitelist}
+                        onClick={onOpenWaitlist}
                         className="btn-ai btn-ai-primary"
                     >
                         {t.faq.footer_btn}

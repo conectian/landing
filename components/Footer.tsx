@@ -4,10 +4,10 @@ import { Mail, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 interface FooterProps {
-    onOpenWhitelist: () => void;
+    onOpenWaitlist: () => void;
 }
 
-export default function Footer({ onOpenWhitelist }: FooterProps) {
+export default function Footer({ onOpenWaitlist }: FooterProps) {
     const { t } = useLanguage();
 
     return (
@@ -63,7 +63,7 @@ export default function Footer({ onOpenWhitelist }: FooterProps) {
                             </li>
                             <li className="pt-4">
                                 <button
-                                    onClick={onOpenWhitelist}
+                                    onClick={onOpenWaitlist}
                                     className="btn-ai btn-ai-secondary w-full"
                                 >
                                     {t.footer.cta_btn}

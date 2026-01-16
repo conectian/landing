@@ -2,19 +2,19 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WhitelistModal from "@/components/WhitelistModal";
+import WaitlistModal from "@/components/WaitlistModal";
 import { useState } from "react";
 import { FileCheck, Terminal, Users2, Rocket } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function TermsPage() {
-    const [isWhitelistOpen, setIsWhitelistOpen] = useState(false);
-    const openWhitelist = () => setIsWhitelistOpen(true);
-    const closeWhitelist = () => setIsWhitelistOpen(false);
+    const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
+    const openWaitlist = () => setIsWaitlistOpen(true);
+    const closeWaitlist = () => setIsWaitlistOpen(false);
 
     return (
         <div className="min-h-screen bg-white">
-            <Header onOpenWhitelist={openWhitelist} />
+            <Header onOpenWaitlist={openWaitlist} />
 
             <main className="pt-32 pb-20">
                 <div className="section-container max-w-4xl">
@@ -61,9 +61,9 @@ export default function TermsPage() {
                         </section>
 
                         <section>
-                            <h2 className="text-2xl font-bold text-[var(--slate-900)] mb-4">2. Registro y Whitelist</h2>
+                            <h2 className="text-2xl font-bold text-[var(--slate-900)] mb-4">2. Registro y Waitlist</h2>
                             <p className="text-[var(--slate-600)] leading-relaxed">
-                                El registro en nuestra Whitelist no garantiza el acceso inmediato al servicio. Conectian
+                                El registro en nuestra Waitlist no garantiza el acceso inmediato al servicio. Conectian
                                 se reserva el derecho de seleccionar a los participantes basándose en la viabilidad técnica
                                 y el potencial de impacto de los proyectos propuestos.
                             </p>
@@ -90,8 +90,8 @@ export default function TermsPage() {
                 </div>
             </main>
 
-            <Footer onOpenWhitelist={openWhitelist} />
-            <WhitelistModal isOpen={isWhitelistOpen} onClose={closeWhitelist} />
+            <Footer onOpenWaitlist={openWaitlist} />
+            <WaitlistModal isOpen={isWaitlistOpen} onClose={closeWaitlist} />
         </div>
     );
 }

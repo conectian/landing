@@ -7,12 +7,12 @@ import emailjs from "@emailjs/browser";
 
 import { useLanguage } from "@/context/LanguageContext";
 
-interface WhitelistModalProps {
+interface WaitlistModalProps {
     isOpen: boolean;
     onClose: () => void;
 }
 
-export default function WhitelistModal({ isOpen, onClose }: WhitelistModalProps) {
+export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
     const { t } = useLanguage();
     const [step, setStep] = useState<"form" | "success">("form");
     const [loading, setLoading] = useState(false);
@@ -37,7 +37,7 @@ export default function WhitelistModal({ isOpen, onClose }: WhitelistModalProps)
             name: formData.name,
             email: formData.email,
             time: new Date().toLocaleString(),
-            title: "Nueva solicitud de Whitelist",
+            title: "Nueva solicitud de Waitlist",
         };
 
         try {
@@ -88,34 +88,34 @@ export default function WhitelistModal({ isOpen, onClose }: WhitelistModalProps)
                             <>
                                 <div className="mb-8">
                                     <h2 className="text-3xl font-bold text-[var(--slate-900)] leading-tight mb-4">
-                                        {t.whitelist.title_part1} <br /> <span className="text-[var(--ai-primary)]">{t.whitelist.title_part2}</span>
+                                        {t.waitlist.title_part1} <br /> <span className="text-[var(--ai-primary)]">{t.waitlist.title_part2}</span>
                                     </h2>
                                     <span className="badge-ai gap-2 py-1.5 px-4 inline-flex items-center">
                                         <Award className="w-4 h-4" />
-                                        {t.whitelist.badge}
+                                        {t.waitlist.badge}
                                     </span>
                                 </div>
 
                                 <form onSubmit={handleSubmit} className="space-y-6">
                                     <div>
-                                        <label className="block text-sm font-bold text-[var(--slate-700)] mb-2 px-1">{t.whitelist.name_label}</label>
+                                        <label className="block text-sm font-bold text-[var(--slate-700)] mb-2 px-1">{t.waitlist.name_label}</label>
                                         <input
                                             required
                                             type="text"
                                             value={formData.name}
                                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                            placeholder={t.whitelist.name_placeholder}
+                                            placeholder={t.waitlist.name_placeholder}
                                             className="w-full px-5 py-4 rounded-2xl border border-[var(--slate-100)] bg-[var(--slate-50)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--ai-primary)]/20 focus:border-[var(--ai-primary)] font-medium transition-all"
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-bold text-[var(--slate-700)] mb-2 px-1">{t.whitelist.email_label}</label>
+                                        <label className="block text-sm font-bold text-[var(--slate-700)] mb-2 px-1">{t.waitlist.email_label}</label>
                                         <input
                                             required
                                             type="email"
                                             value={formData.email}
                                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                            placeholder={t.whitelist.email_placeholder}
+                                            placeholder={t.waitlist.email_placeholder}
                                             className="w-full px-5 py-4 rounded-2xl border border-[var(--slate-100)] bg-[var(--slate-50)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--ai-primary)]/20 focus:border-[var(--ai-primary)] font-medium transition-all"
                                         />
                                     </div>
@@ -129,13 +129,13 @@ export default function WhitelistModal({ isOpen, onClose }: WhitelistModalProps)
                                             <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                                         ) : (
                                             <>
-                                                {t.whitelist.btn_send}
+                                                {t.waitlist.btn_send}
                                                 <Send className="w-5 h-5" />
                                             </>
                                         )}
                                     </button>
                                     <p className="text-center text-xs text-[var(--slate-400)]">
-                                        {t.whitelist.footer}
+                                        {t.waitlist.footer}
                                     </p>
                                 </form>
                             </>
@@ -148,15 +148,15 @@ export default function WhitelistModal({ isOpen, onClose }: WhitelistModalProps)
                                 <div className="w-20 h-20 rounded-full bg-green-50 flex items-center justify-center mb-6">
                                     <CheckCircle2 className="w-10 h-10 text-green-500" />
                                 </div>
-                                <h2 className="text-3xl font-bold text-[var(--slate-900)] mb-4">{t.whitelist.success_title}</h2>
+                                <h2 className="text-3xl font-bold text-[var(--slate-900)] mb-4">{t.waitlist.success_title}</h2>
                                 <p className="text-[var(--slate-500)] mb-10 leading-relaxed">
-                                    {t.whitelist.success_desc}
+                                    {t.waitlist.success_desc}
                                 </p>
                                 <button
                                     onClick={handleClose}
                                     className="btn-ai btn-ai-secondary w-full"
                                 >
-                                    {t.whitelist.btn_close}
+                                    {t.waitlist.btn_close}
                                 </button>
                             </motion.div>
                         )}

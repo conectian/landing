@@ -32,12 +32,12 @@ const adoptionStages = [
 ];
 
 interface DealRoomShowcaseProps {
-    onOpenWhitelist: () => void;
+    onOpenWaitlist: () => void;
 }
 
 import { useLanguage } from "@/context/LanguageContext";
 
-export default function DealRoomShowcase({ onOpenWhitelist }: DealRoomShowcaseProps) {
+export default function DealRoomShowcase({ onOpenWaitlist }: DealRoomShowcaseProps) {
     const { t } = useLanguage();
 
     const stageIcons = [

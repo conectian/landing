@@ -7,10 +7,10 @@ import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 
 interface PartnersSectionProps {
-    onOpenWhitelist: () => void;
+    onOpenWaitlist: () => void;
 }
 
-export default function PartnersSection({ onOpenWhitelist }: PartnersSectionProps) {
+export default function PartnersSection({ onOpenWaitlist }: PartnersSectionProps) {
     const { t, language } = useLanguage();
 
     const stepsIcons = [

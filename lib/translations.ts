@@ -429,10 +429,10 @@ export const translations = {
       cta_btn: "Hablar con un experto",
       all_rights: "Todos los derechos reservados",
     },
-    whitelist: {
+    waitlist: {
       badge: "Acceso Anticipado",
       title_part1: "Únete a la ",
-      title_part2: "Whitelist de Conectian",
+      title_part2: "Waitlist de Conectian",
       description:
         "Estamos finalizando los detalles. Inscríbete para ser de los primeros en implementar IA real en tu negocio.",
       name_label: "Nombre completo",
@@ -876,10 +876,10 @@ export const translations = {
       cta_btn: "Talk to an Expert",
       all_rights: "All rights reserved",
     },
-    whitelist: {
+    waitlist: {
       badge: "Early Access",
       title_part1: "Join the ",
-      title_part2: "Conectian Whitelist",
+      title_part2: "Conectian Waitlist",
       description:
         "We are finalizing the details. Sign up to be one of the first to implement real AI in your business.",
       name_label: "Full Name",
@@ -1333,10 +1333,10 @@ export const translations = {
       cta_btn: "Parler à un expert",
       all_rights: "Tous droits réservés",
     },
-    whitelist: {
+    waitlist: {
       badge: "Accès Anticipé",
       title_part1: "Rejoignez la ",
-      title_part2: "Whitelist Conectian",
+      title_part2: "Waitlist Conectian",
       description:
         "Nous finalisons les détails. Inscrivez-vous pour être parmi les premiers à implémenter une IA réelle dans votre entreprise.",
       name_label: "Nom complet",
@@ -1778,10 +1778,10 @@ export const translations = {
       cta_btn: "Parla con un esperto",
       all_rights: "Tutti i diritti riservati",
     },
-    whitelist: {
+    waitlist: {
       badge: "Accesso Anticipato",
       title_part1: "Unisciti alla ",
-      title_part2: "Whitelist Conectian",
+      title_part2: "Waitlist Conectian",
       description:
         "Stiamo ultimando i dettagli. Iscriviti per essere tra i primi a implementare vera IA nella tua azienda.",
       name_label: "Nome completo",
@@ -2231,10 +2231,10 @@ export const translations = {
       cta_btn: "Experten sprechen",
       all_rights: "Alle Rechte vorbehalten",
     },
-    whitelist: {
+    waitlist: {
       badge: "Early Access",
       title_part1: "Treten Sie der ",
-      title_part2: "Conectian Whitelist bei",
+      title_part2: "Conectian Waitlist bei",
       description:
         "Wir finalisieren die Details. Melden Sie sich an, um als einer der Ersten echte KI in Ihrem Unternehmen zu implementieren.",
       name_label: "Vollständiger Name",
@@ -2656,9 +2656,9 @@ export const translations = {
       cta_btn: "専門家に相談",
       all_rights: "All rights reserved",
     },
-    whitelist: {
+    waitlist: {
       badge: "早期アクセス",
-      title_part1: "Conectian Whitelistに",
+      title_part1: "Conectian Waitlistに",
       title_part2: "参加する",
       description:
         "詳細を最終調整中です。登録して、あなたのビジネスに本物のAIをいち早く導入しましょう。",
@@ -3051,10 +3051,10 @@ export const translations = {
       cta_btn: "咨询专家",
       all_rights: "保留所有权利",
     },
-    whitelist: {
+    waitlist: {
       badge: "早期访问",
       title_part1: "加入",
-      title_part2: "Conectian 白名单",
+      title_part2: "Conectian 等候名单",
       description:
         "我们正在敲定细节。注册成为第一批在您的企业中实施真正 AI 的人。",
       name_label: "全名",

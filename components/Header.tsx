@@ -5,7 +5,7 @@ import { Menu, X, Globe } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 interface HeaderProps {
-    onOpenWhitelist: () => void;
+    onOpenWaitlist: () => void;
 }
 
 const languages = [
@@ -18,7 +18,7 @@ const languages = [
     { code: "zh", name: "中文", flag: "🇨🇳" },
 ];
 
-export default function Header({ onOpenWhitelist }: HeaderProps) {
+export default function Header({ onOpenWaitlist }: HeaderProps) {
     const { language, setLanguage, t } = useLanguage();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
@@ -146,7 +146,7 @@ export default function Header({ onOpenWhitelist }: HeaderProps) {
                             {t.nav.partners}
                         </Link>
                         <button
-                            onClick={onOpenWhitelist}
+                            onClick={onOpenWaitlist}
                             className="btn-ai btn-ai-primary !py-2.5 !px-6 text-sm ml-2"
                         >
                             {t.nav.cta}
@@ -200,7 +200,7 @@ export default function Header({ onOpenWhitelist }: HeaderProps) {
                         </Link>
                         <button
                             onClick={() => {
-                                onOpenWhitelist();
+                                onOpenWaitlist();
                                 setMobileMenuOpen(false);
                             }}
                             className="btn-ai btn-ai-primary w-full text-lg py-4"

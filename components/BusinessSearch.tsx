@@ -8,10 +8,10 @@ import emailjs from "@emailjs/browser";
 import { useLanguage } from "@/context/LanguageContext";
 
 interface BusinessSearchProps {
-    onOpenWhitelist: () => void;
+    onOpenWaitlist: () => void;
 }
 
-export default function BusinessSearch({ onOpenWhitelist }: BusinessSearchProps) {
+export default function BusinessSearch({ onOpenWaitlist }: BusinessSearchProps) {
     const { t, language } = useLanguage();
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
@@ -28,7 +28,7 @@ export default function BusinessSearch({ onOpenWhitelist }: BusinessSearchProps)
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        onOpenWhitelist();
+        onOpenWaitlist();
     };
 
     const objectives = t.business.objective_options;
@@ -189,7 +189,7 @@ export default function BusinessSearch({ onOpenWhitelist }: BusinessSearchProps)
                         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-4 border-t border-[var(--slate-100)] relative z-40">
                             <button
                                 type="button"
-                                onClick={onOpenWhitelist}
+                                onClick={onOpenWaitlist}
                                 className="btn-ai btn-ai-primary group px-8"
                             >
                                 {t.business.btn_search}

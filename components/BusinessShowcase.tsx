@@ -7,10 +7,10 @@ import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 
 interface BusinessShowcaseProps {
-    onOpenWhitelist?: () => void;
+    onOpenWaitlist?: () => void;
 }
 
-export default function BusinessShowcase({ onOpenWhitelist }: BusinessShowcaseProps) {
+export default function BusinessShowcase({ onOpenWaitlist }: BusinessShowcaseProps) {
     const { t } = useLanguage();
 
     const verifiedCases = [
@@ -207,7 +207,7 @@ export default function BusinessShowcase({ onOpenWhitelist }: BusinessShowcasePr
 
                     <div className="flex flex-col sm:flex-row items-center gap-6 pt-8 border-t border-white/10">
                         <button
-                            onClick={onOpenWhitelist}
+                            onClick={onOpenWaitlist}
                             className="btn-ai btn-ai-primary border-none shadow-none group px-8"
                         >
                             {t.business.showcase.program_btn}

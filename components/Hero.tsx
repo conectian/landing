@@ -8,10 +8,10 @@ import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 
 interface HeroProps {
-    onOpenWhitelist: () => void;
+    onOpenWaitlist: () => void;
 }
 
-export default function Hero({ onOpenWhitelist }: HeroProps) {
+export default function Hero({ onOpenWaitlist }: HeroProps) {
     const { t } = useLanguage();
     const videoRef = useRef<HTMLVideoElement>(null);
     const [activeCardIndex, setActiveCardIndex] = useState(0);
@@ -97,7 +97,7 @@ export default function Hero({ onOpenWhitelist }: HeroProps) {
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </Link>
                             <button
-                                onClick={onOpenWhitelist}
+                                onClick={onOpenWaitlist}
                                 className="btn-ai btn-ai-secondary w-full sm:w-auto text-lg px-8"
                             >
                                 {t.hero.btn_consult}

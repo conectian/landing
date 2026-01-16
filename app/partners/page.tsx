@@ -3,24 +3,24 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WhitelistModal from "@/components/WhitelistModal";
+import WaitlistModal from "@/components/WaitlistModal";
 import PartnerForm from "@/components/PartnerForm";
 
 export default function PartnersPage() {
-    const [isWhitelistOpen, setIsWhitelistOpen] = useState(false);
-    const openWhitelist = () => setIsWhitelistOpen(true);
-    const closeWhitelist = () => setIsWhitelistOpen(false);
+    const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
+    const openWaitlist = () => setIsWaitlistOpen(true);
+    const closeWaitlist = () => setIsWaitlistOpen(false);
 
     return (
         <div className="min-h-screen bg-white">
-            <Header onOpenWhitelist={openWhitelist} />
+            <Header onOpenWaitlist={openWaitlist} />
 
             <main className="pt-24">
-                <PartnerForm onOpenWhitelist={openWhitelist} />
+                <PartnerForm onOpenWaitlist={openWaitlist} />
             </main>
 
-            <Footer onOpenWhitelist={openWhitelist} />
-            <WhitelistModal isOpen={isWhitelistOpen} onClose={closeWhitelist} />
+            <Footer onOpenWaitlist={openWaitlist} />
+            <WaitlistModal isOpen={isWaitlistOpen} onClose={closeWaitlist} />
         </div>
     );
 }

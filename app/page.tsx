@@ -8,29 +8,29 @@ import ValueProposition from "@/components/ValueProposition";
 import DealRoomShowcase from "@/components/DealRoomShowcase";
 import PartnersSection from "@/components/PartnersSection";
 import FAQSection from "@/components/FAQSection";
-import WhitelistModal from "@/components/WhitelistModal";
+import WaitlistModal from "@/components/WaitlistModal";
 import Footer from "@/components/Footer";
 
 export default function Home() {
-  const [isWhitelistOpen, setIsWhitelistOpen] = useState(false);
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
 
-  const openWhitelist = () => setIsWhitelistOpen(true);
-  const closeWhitelist = () => setIsWhitelistOpen(false);
+  const openWaitlist = () => setIsWaitlistOpen(true);
+  const closeWaitlist = () => setIsWaitlistOpen(false);
 
   return (
     <>
-      <Header onOpenWhitelist={openWhitelist} />
+      <Header onOpenWaitlist={openWaitlist} />
       <main>
-        <Hero onOpenWhitelist={openWhitelist} />
+        <Hero onOpenWaitlist={openWaitlist} />
         <ValueProposition />
-        <UseCasesGrid onOpenWhitelist={openWhitelist} />
-        <DealRoomShowcase onOpenWhitelist={openWhitelist} />
-        <PartnersSection onOpenWhitelist={openWhitelist} />
-        <FAQSection onOpenWhitelist={openWhitelist} />
+        <UseCasesGrid onOpenWaitlist={openWaitlist} />
+        <DealRoomShowcase onOpenWaitlist={openWaitlist} />
+        <PartnersSection onOpenWaitlist={openWaitlist} />
+        <FAQSection onOpenWaitlist={openWaitlist} />
       </main>
-      <Footer onOpenWhitelist={openWhitelist} />
+      <Footer onOpenWaitlist={openWaitlist} />
 
-      <WhitelistModal isOpen={isWhitelistOpen} onClose={closeWhitelist} />
+      <WaitlistModal isOpen={isWaitlistOpen} onClose={closeWaitlist} />
     </>
   );
 }

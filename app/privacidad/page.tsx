@@ -2,19 +2,19 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WhitelistModal from "@/components/WhitelistModal";
+import WaitlistModal from "@/components/WaitlistModal";
 import { useState } from "react";
 import { Shield, Lock, Eye, FileText } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function PrivacyPage() {
-    const [isWhitelistOpen, setIsWhitelistOpen] = useState(false);
-    const openWhitelist = () => setIsWhitelistOpen(true);
-    const closeWhitelist = () => setIsWhitelistOpen(false);
+    const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
+    const openWaitlist = () => setIsWaitlistOpen(true);
+    const closeWaitlist = () => setIsWaitlistOpen(false);
 
     return (
         <div className="min-h-screen bg-white">
-            <Header onOpenWhitelist={openWhitelist} />
+            <Header onOpenWaitlist={openWaitlist} />
 
             <main className="pt-32 pb-20">
                 <div className="section-container max-w-4xl">
@@ -65,7 +65,7 @@ export default function PrivacyPage() {
                         <section>
                             <h2 className="text-2xl font-bold text-[var(--slate-900)] mb-4">2. Finalidad de los Datos</h2>
                             <p className="text-[var(--slate-600)] leading-relaxed">
-                                Los datos proporcionados a través del formulario de "Whitelist" o contacto se utilizan exclusivamente para:
+                                Los datos proporcionados a través del formulario de "Waitlist" o contacto se utilizan exclusivamente para:
                             </p>
                             <ul className="list-disc pl-6 space-y-2 text-[var(--slate-600)]">
                                 <li>Gestionar tu solicitud de acceso anticipado.</li>
@@ -93,8 +93,8 @@ export default function PrivacyPage() {
                 </div>
             </main>
 
-            <Footer onOpenWhitelist={openWhitelist} />
-            <WhitelistModal isOpen={isWhitelistOpen} onClose={closeWhitelist} />
+            <Footer onOpenWaitlist={openWaitlist} />
+            <WaitlistModal isOpen={isWaitlistOpen} onClose={closeWaitlist} />
         </div>
     );
 }

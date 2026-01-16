@@ -68,12 +68,12 @@ const successCases = [
 ];
 
 interface UseCasesGridProps {
-    onOpenWhitelist: () => void;
+    onOpenWaitlist: () => void;
 }
 
 import { useLanguage } from "@/context/LanguageContext";
 
-export default function UseCasesGrid({ onOpenWhitelist }: UseCasesGridProps) {
+export default function UseCasesGrid({ onOpenWaitlist }: UseCasesGridProps) {
     const { t } = useLanguage();
 
     const caseIcons = [

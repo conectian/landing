@@ -33,6 +33,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const t = trans[lang as keyof typeof trans] || trans.en;
 
   return {
+    metadataBase: new URL("https://conectian.com"),
     title: t.title,
     description: t.desc,
     keywords: ["IA para empresas", "AI for business", "Marketplace IA", "Proveedores de IA", "AI providers", "Casos de éxito IA", "AI success cases"],

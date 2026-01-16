@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { Search, ArrowRight, Sparkles } from "lucide-react";
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
 
 import { useLanguage } from "@/context/LanguageContext";
 

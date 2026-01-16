@@ -3,7 +3,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Send, CheckCircle2, Award } from "lucide-react";
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
 
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -42,12 +41,18 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
         };
 
         try {
-            await emailjs.send(
-                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
-                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
-                templateParams,
-                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ""
-            );
+            const response = await fetch('/api/send-waitlist', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(templateParams),
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to send email');
+            }
+
             setStep("success");
         } catch (error) {
             console.error("Error sending email:", error);

@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { ShieldCheck, ArrowRight, Sparkles, Building2, Globe, Clock, Zap, Cpu, Layers, CheckCircle2, Target } from "lucide-react";
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
 import { useLanguage } from "@/context/LanguageContext";
 
 interface PartnerFormProps {
